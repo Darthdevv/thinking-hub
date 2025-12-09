@@ -1,21 +1,17 @@
-import AvailCoursesSection from '../components/AvailCoursesSection'
-import SuccessStoriesSection from '../components/SuccessStoriesSection'
-import MeetOurExpertsSection from '../components/MeetExpertsSection'
 import DesignThinkingHub from '../components/DesignThinkingHub'
 import ProgramTracks from '../components/ProgramTracks'
-import ImpactStats from '../components/ImpactStats'
-import NewsletterSignup from '../components/NewsletterSignup'
+import IntroSection from '../components/IntroSection'
+import WayOfWorking from '../components/WayOfWork'
+import DataInfoSection from '../components/DataInfoSection'
 
 const LandingPage = () => {
     return (
         <div className='bg-white'>
             <DesignThinkingHub />
+            <IntroSection />
+            <WayOfWorking/>
             <ProgramTracks />
-            <AvailCoursesSection />
-            <MeetOurExpertsSection />
-            <SuccessStoriesSection />
-            <ImpactStats />
-            <NewsletterSignup />
+            <DataInfoSection/>
         </div>
     )
 }

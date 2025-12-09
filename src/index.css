@@ -22,6 +22,15 @@
   }
 }
 
+.clip-path-person {
+          clip-path: ellipse(80% 90% at 20% 50%);
+        }
+        @media (min-width: 1024px) {
+          .clip-path-person {
+            clip-path: ellipse(70% 80% at 15% 50%);
+          }
+        }
+
 body {
   background: var(--background);
   color: var(--foreground);

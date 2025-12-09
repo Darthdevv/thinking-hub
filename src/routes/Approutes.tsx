@@ -9,6 +9,8 @@ import MainNavbar from "../components/MainNavbar";
 import SuccessStories from "../pages/SuccessStories";
 import ForgetPassword from "../pages/forgetPassword";
 import MeetOurExpertsPage from "../pages/MeetOurExpertsPage";
+import HowWeWork from "../pages/HowWeWork";
+import ContactUs from "../pages/ContactUs";
 
 const AppRoutes = () => {
     return (
@@ -34,6 +36,8 @@ const RouteHandler = () => {
                 <Route path="/successStories" element={<SuccessStories />} />
                 <Route path="/forgetPassword" element={<ForgetPassword />} />
                 <Route path="/meet" element={<MeetOurExpertsPage />} />
+                <Route path="/how-we-work" element={<HowWeWork />} />
+                <Route path="/contact-us" element={<ContactUs />} />
             </Routes>
             {!excludeAuthPaths.includes(pathname) && <Footer />}
         </>
