@@ -3,7 +3,7 @@ import { Facebook, Instagram, Twitter, Send } from "lucide-react";
 
 const SubmitInterestSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Text */}

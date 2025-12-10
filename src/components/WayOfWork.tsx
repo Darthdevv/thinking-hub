@@ -1,7 +1,17 @@
 
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function WayOfWorking() {
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -39,9 +49,9 @@ export default function WayOfWorking() {
 
         {/* Right: Content */}
         <div className="text-gray-800">
-          <p className="text-green-600 font-semibold mb-2">How we work</p>
+          <p className="text-green-600 font-semibold mb-2">{t("welcome")}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">
-            OUR WAY OF WORKING
+            {t("description")}
           </h2>
 
           {/* Decorative curve */}

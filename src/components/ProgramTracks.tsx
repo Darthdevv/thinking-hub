@@ -3,7 +3,7 @@ import RocketIcon from "../assets/icons/RocketIcon";
 import ChartIcon from "../assets/icons/ChartIcon";
 import ZapIcon from "../assets/icons/ZapIcon";
 import RightArrow from "../assets/icons/RightArrow";
-import Pattern from "../assets/svgs/pattern.svg"
+// import Pattern from "../assets/svgs/pattern.svg"
 
 
 interface Track {
@@ -93,13 +93,13 @@ const ProgramTracks: React.FC = () => {
               </div>
 
               {/* Footer pattern SVG */}
-              <div className="h-15 w-full">
+              {/* <div className="h-15 w-full">
                 <img
                   src={Pattern}
                   alt="pattern"
                   className="h-full w-full object-cover"
                 />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -1,41 +1,38 @@
 import { Link } from 'react-router';
 import GreenLogo from '../assets/icons/Footer/GreenLogo';
-import NewBadge from '../assets/icons/Footer/NewBadge';
 import XIcon from '../assets/icons/Footer/X';
 import LinkedInIcon from '../assets/icons/Footer/Linkedin';
 import FacebookIcon from '../assets/icons/Footer/Facebook';
 import InstagramIcon from '../assets/icons/Footer/Instgram';
 import SnapchatIcon from '../assets/icons/Footer/Snapchat';
+import SoonBadge from '../assets/icons/Footer/SoonBadge';
 
 // Define link arrays for each section
 const designThinkingHubLinks = [
     { label: 'About us', to: '#' },
-    { label: 'Courses', to: '#' },
-    { label: 'Experts', to: '#' },
-    { label: 'Success Stories', to: '#' },
-    { label: 'Impacts', to: '#' },
     { label: 'Contact', to: '#' },
+    { label: 'How We Work', to: '#' },
 ];
 
 const programTracksLinks = [
-    { label: 'Start-Up Program', to: '#', hasBadge: false },
-    { label: 'Maturity Program', to: '#', hasBadge: false },
+    { label: 'Start-Up Program', to: '#', hasBadge: true },
+    { label: 'Maturity Program', to: '#', hasBadge: true },
     { label: 'Growth Program', to: '#', hasBadge: true },
 ];
 
-const resourcesLinks = [
-    { label: 'Blog', to: '#' },
-    { label: 'Newsletter', to: '#' },
-    { label: 'Help centre', to: '#' },
-    { label: 'Support', to: '#' },
-];
+// const resourcesLinks = [
+//     { label: 'Blog', to: '#' },
+//     { label: 'Newsletter', to: '#' },
+//     { label: 'Help centre', to: '#' },
+//     { label: 'Support', to: '#' },
+// ];
 
-const legalLinks = [
-    { label: 'Terms', to: '#' },
-    { label: 'Privacy', to: '#' },
-    { label: 'Cookies', to: '#' },
-    { label: 'Licenses', to: '#' },
-];
+// const legalLinks = [
+//     { label: 'Terms', to: '#' },
+//     { label: 'Privacy', to: '#' },
+//     { label: 'Cookies', to: '#' },
+//     { label: 'Licenses', to: '#' },
+// ];
 
 const socialLinks = [
     { Icon: XIcon, to: '#' },
@@ -47,9 +44,9 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <div className="w-full mt-auto bg-[#0C0E12] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 sm:py-12 md:py-16 min-h-[24rem]">
+        <div className="w-full mt-auto bg-[#0C0E12] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
             {/* Top Section */}
-            <div className="border-b border-[#22262F] pb-8 md:pb-16">
+            {/* <div className="border-b border-[#22262F] pb-8 md:pb-16">
                 <div className="mb-3 md:mb-4">
                     <h1 className="font-semibold text-xl sm:text-2xl md:text-3xl text-white">
                         Ready to Build Your Impact?
@@ -68,7 +65,7 @@ const Footer = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Middle Section */}
             <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
@@ -98,36 +95,36 @@ const Footer = () => {
                             <Link className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
                                 {link.label}
                             </Link>
-                            {link.hasBadge && <NewBadge />}
+                            {link.hasBadge && <SoonBadge />}
                         </div>
                     ))}
                 </div>
 
                 {/* Resources Links */}
-                <div className="flex flex-col gap-2 md:gap-3">
+                {/* <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="font-semibold text-xs sm:text-sm">Resources</h1>
                     {resourcesLinks.map((link, index) => (
                         <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
                             {link.label}
                         </Link>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Legal Links */}
-                <div className="flex flex-col gap-2 md:gap-3">
+                {/* <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="font-semibold text-xs sm:text-sm">Legal</h1>
                     {legalLinks.map((link, index) => (
                         <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
                             {link.label}
                         </Link>
                     ))}
-                </div>
+                </div> */}
             </div>
 
             {/* Bottom Section */}
             <div className="flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
                 <h1 className="font-normal text-sm sm:text-base">
-                    © 2025 Design Thinking Hub. All rights reserved.
+                    © {new Date().getFullYear()} Design Thinking Hub. All rights reserved.
                 </h1>
                 <div className="flex gap-4 md:gap-6">
                     {socialLinks.map((link, index) => (
