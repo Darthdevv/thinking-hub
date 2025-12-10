@@ -18,7 +18,7 @@ export default function IntroSection() {
   ];
 
   return (
-    <section className="relative w-full py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative w-full px-6 md:px-12 py-24 lg:py-32 overflow-hidden">
       {/* Background image with green overlay */}
       <div className="absolute inset-0 z-0">
         <img

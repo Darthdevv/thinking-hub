@@ -44,9 +44,9 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <div className="w-full mt-auto bg-[#0C0E12] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
-            {/* Top Section */}
-            {/* <div className="border-b border-[#22262F] pb-8 md:pb-16">
+      <div className="w-full mt-auto bg-[#0C0E12] border-t-[22px] border-[#008A4A] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
+        {/* Top Section */}
+        {/* <div className="border-b border-[#22262F] pb-8 md:pb-16">
                 <div className="mb-3 md:mb-4">
                     <h1 className="font-semibold text-xl sm:text-2xl md:text-3xl text-white">
                         Ready to Build Your Impact?
@@ -67,41 +67,50 @@ const Footer = () => {
                 </div>
             </div> */}
 
-            {/* Middle Section */}
-            <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
-                {/* Logo and Description */}
-                <div className="flex flex-col gap-4 md:gap-6 max-w-xs">
-                    <GreenLogo />
-                    <h1 className="text-sm sm:text-base font-normal">
-                        Empowering changemakers through action and impact.
-                    </h1>
-                </div>
+        {/* Middle Section */}
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
+          {/* Logo and Description */}
+          <div className="flex flex-col gap-4 md:gap-6 max-w-xs">
+            <GreenLogo />
+            <h1 className="text-sm sm:text-base font-normal">
+              Empowering changemakers through action and impact.
+            </h1>
+          </div>
 
-                {/* Design Thinking Hub Links */}
-                <div className="flex flex-col gap-2 md:gap-3">
-                    <h1 className="font-semibold text-xs sm:text-sm">Design Thinking Hub</h1>
-                    {designThinkingHubLinks.map((link, index) => (
-                        <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </div>
+          {/* Design Thinking Hub Links */}
+          <div className="flex flex-col gap-2 md:gap-3">
+            <h1 className="font-semibold text-xs sm:text-sm">
+              Design Thinking Hub
+            </h1>
+            {designThinkingHubLinks.map((link, index) => (
+              <Link
+                key={index}
+                className="font-semibold text-sm sm:text-base hover:text-white transition"
+                to={link.to}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
-                {/* Program Tracks Links */}
-                <div className="flex flex-col gap-2 md:gap-3">
-                    <h1 className="font-semibold text-xs sm:text-sm">Program Tracks</h1>
-                    {programTracksLinks.map((link, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                            <Link className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
-                                {link.label}
-                            </Link>
-                            {link.hasBadge && <SoonBadge />}
-                        </div>
-                    ))}
-                </div>
+          {/* Program Tracks Links */}
+          <div className="flex flex-col gap-2 md:gap-3">
+            <h1 className="font-semibold text-xs sm:text-sm">Program Tracks</h1>
+            {programTracksLinks.map((link, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Link
+                  className="font-semibold text-sm sm:text-base hover:text-white transition"
+                  to={link.to}
+                >
+                  {link.label}
+                </Link>
+                {link.hasBadge && <SoonBadge />}
+              </div>
+            ))}
+          </div>
 
-                {/* Resources Links */}
-                {/* <div className="flex flex-col gap-2 md:gap-3">
+          {/* Resources Links */}
+          {/* <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="font-semibold text-xs sm:text-sm">Resources</h1>
                     {resourcesLinks.map((link, index) => (
                         <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
@@ -110,8 +119,8 @@ const Footer = () => {
                     ))}
                 </div> */}
 
-                {/* Legal Links */}
-                {/* <div className="flex flex-col gap-2 md:gap-3">
+          {/* Legal Links */}
+          {/* <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="font-semibold text-xs sm:text-sm">Legal</h1>
                     {legalLinks.map((link, index) => (
                         <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
@@ -119,22 +128,27 @@ const Footer = () => {
                         </Link>
                     ))}
                 </div> */}
-            </div>
-
-            {/* Bottom Section */}
-            <div className="flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
-                <h1 className="font-normal text-sm sm:text-base">
-                    © {new Date().getFullYear()} Design Thinking Hub. All rights reserved.
-                </h1>
-                <div className="flex gap-4 md:gap-6">
-                    {socialLinks.map((link, index) => (
-                        <Link key={index} to={link.to} className="hover:text-white transition">
-                            <link.Icon />
-                        </Link>
-                    ))}
-                </div>
-            </div>
         </div>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
+          <h1 className="font-normal text-sm sm:text-base">
+            © {new Date().getFullYear()} Design Thinking Hub. All rights
+            reserved.
+          </h1>
+          <div className="flex gap-4 md:gap-6">
+            {socialLinks.map((link, index) => (
+              <Link
+                key={index}
+                to={link.to}
+                className="hover:text-white transition"
+              >
+                <link.Icon />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     );
 };
 

@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function DataInfoSection() {
   return (
-    <section className="relative w-full h-[350px] md:h-[420px] lg:h-[460px] overflow-hidden">
+    <section className="relative w-full h-[350px] md:h-[420px] lg:h-[460px] py-24 lg:py-32 overflow-hidden">
       {/* Background Image */}
       <img
         src="https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg"
@@ -35,9 +35,6 @@ export default function DataInfoSection() {
           </button>
         </div>
       </div>
-
-      {/* Bottom Green Bar */}
-      <div className="absolute bottom-0 left-0 w-full h-3 bg-green-700" />
     </section>
   );
 }

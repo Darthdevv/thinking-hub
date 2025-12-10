@@ -3,7 +3,7 @@ import backgroundPattern from "../assets/images/pattern.png";
 
 const ContactFooter = () => {
   return (
-    <footer className=" w-full relative border-b-8 border-emerald-600 bg-white overflow-hidden">
+    <footer className=" w-full relative bg-white overflow-hidden">
       {/* Full background image – your exact file */}
       <div
         className="absolute inset-0 opacity-50"

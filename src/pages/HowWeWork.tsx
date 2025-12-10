@@ -1,40 +1,51 @@
 
+import { useTranslation } from 'react-i18next';
 import CapabilityCard from '../components/CapabilityCard';
 import GoalCallToAction from '../components/GoalCallToAction';
 import OurWayOfWorking from '../components/OurWayOfWorking'
+import { useEffect } from 'react';
+import img1 from '../assets/images/Rectangle 47.png'
+import img2 from "../assets/images/Rectangle 45.png";
+import img3 from "../assets/images/Rectangle 46.png";
+import img4 from "../assets/images/Rectangle 47 (1).png";
 
 const HowWeWork = () => {
+    const { t, i18n } = useTranslation();
+  
+    useEffect(() => {
+      const dir = i18n.language === "ar" ? "rtl" : "ltr";
+      document.documentElement.dir = dir;
+      document.documentElement.lang = i18n.language;
+    }, [i18n.language]);
   return (
     <div>
       <OurWayOfWorking />
       <CapabilityCard
-        title="Leadership & Personal Mastery"
-        description="We help leaders understand their unique capabilities, clarify their vision, and develop the skills required to lead an organization into the future."
+        title={t("howweworktitle1")}
+        description={t("howweworkdesc1")}
         images={[
-          "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop",
+          img1,
         ]}
       />
 
       <CapabilityCard
-        title="Organizational Effectiveness"
-        description="We help forward-thinking organizations assess community needs, translate insights into meaningful offerings, and build healthy, resilient organizations that deliver high-impact results."
+        title={t("howweworktitle2")}
+        description={t("howweworktdesc2")}
         images={[
-          "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+          img3, img2
         ]}
         reverse={true}
       />
 
       <CapabilityCard
-        title="Innovation"
-        description="Innovation is grounded in human-centered design, where insight, creativity, and action continuously feed each other..."
+        title={t("howweworktitle3")}
+        description={t("howweworkdesc3")}
         images={[
-          "https://images.unsplash.com/photo-1517248135467-4552e8d5e6a8?w=800&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop",
+          img4
         ]}
       />
 
-      <GoalCallToAction/>
+      <GoalCallToAction />
     </div>
   );
 }

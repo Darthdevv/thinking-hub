@@ -1,100 +1,79 @@
-import React from "react";
-import Image from "../assets/images/polygon-pattern.png";
-import Image86 from "../assets/images/image 86.png";
-import Image87 from "../assets/images/image 87.png";
-import Image88 from "../assets/images/image 88.png";
-import Image89 from "../assets/images/image 89.png";
-import Image90 from "../assets/images/image 90.png";
-import Image91 from "../assets/images/image 91.png";
-import Image93 from "../assets/images/image 93.png";
+import { Users, Flag, Lightbulb } from "lucide-react";
+import patternImage from "../assets/images/About.png";
 
-
-
-
-const DesignThinkingHub: React.FC = () => {
+export default function AboutSection() {
   return (
-    <section className="bg-white min-h-screen px-[120px] grid place-items-center">
-      <div className="w-full mx-auto grid lg:grid-cols-2 gap-6">
-        {/* Left Content */}
-        <div>
-          <div>
-            <p className="text-[#008A4A] text-lg font-semibold mb-3">About</p>
-            <h1 className="text-5xl max-md:text-4xl font-bold text-[#181D27] mb-3">
+    <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        {/* Header + Pattern Image */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+          {/* Left Text */}
+          <div className="max-w-3xl">
+            <p className="text-green-600 font-medium text-sm tracking-widest mb-4">
+              About
+            </p>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Design Thinking Hub
-            </h1>
+            </h2>
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+              The Design Thinking Hub is an innovation catalyst that unlocks the
+              potential of non-profit organizations.
+            </p>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 gap-8 md:gap-8">
-            <p className="text-[#414651] text-base font-normal mb-4">
-              At Social Pioneer incubator, we believe in the power of innovation
-              to drive social change. Our mission is to support nonprofit
-              leaders, early-stage entrepreneurs, and organizations tackling
-              real-world challenges by equipping them with the tools, knowledge,
-              and community they need to grow and thrive.
-            </p>
-            <p className="text-[#414651] text-base font-normal mb-4">
-              Whether you're launching a new initiative or scaling an existing
-              one, our incubator provides structured programs, expert
-              mentorship, and hands-on learning experiences tailored to your
-              stage of development—from Start-Up to Maturity.
-            </p>
-            <p className="text-[#414651] text-base font-normal mb-6">
-              We're more than an incubator. We're a collaborative hub where
-              ideas take root, partnerships flourish, and impact multiplies.
-            </p>
+          {/* Right Pattern Image */}
+          <div className="hidden lg:block flex-shrink-0">
+            <img
+              src={patternImage}
+              alt="Decorative pattern"
+              className="w-[320px] lg:w-[450px] xl:w-[520px]"
+            />
           </div>
         </div>
 
-        {/* Right Image */}
-        <div className="grid place-items-center max-sm:hidden">
-          <img
-            src={Image}
-            alt="Impact participants"
-            className="rounded-lg object-cover"
-          />
-        </div>
-      </div>
+        {/* Mission | Vision | Values */}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-8 relative">
+          {/* Vertical Dividers */}
+          <div className="hidden lg:block absolute left-1/3 top-0 bottom-0 w-px bg-gray-200"></div>
+          <div className="hidden lg:block absolute left-2/3 top-0 bottom-0 w-px bg-gray-200"></div>
 
-      <div className="max-w-7xl w-full grid grid-cols-7 max-sm:grid-cols-2 gap-10 -mt-40 max-sm:mt-10 place-items-center justify-items-center">
-        <img
-          src={Image86}
-          alt="Logo 1"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image87}
-          alt="Logo 2"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image88}
-          alt="Logo 3"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image89}
-          alt="Logo 4"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image90}
-          alt="Logo 5"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image91}
-          alt="Logo 6"
-          className="h-12 w-full object-contain"
-        />
-        <img
-          src={Image93}
-          alt="Logo 7"
-          className="h-12 w-full object-contain"
-        />
+          {/* Mission */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Users className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">MISSION</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Develop Social Innovators and Organizations to help transform and
+              create vibrant lasting community impact.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Flag className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">VISION</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Become the region’s leading catalyst for social innovation,
+              collaboration and sustainable growth.
+            </p>
+          </div>
+
+          {/* Values */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Lightbulb className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">VALUES</h3>
+            <p className="text-gray-600 leading-relaxed">
+              We unlock potential, act on ideas, support each other, learn by
+              experimenting, and empathize deeply with those we serve.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
-};
-
-export default DesignThinkingHub;
+}

@@ -31,7 +31,6 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({
         >
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             {title}
-            <span className="text-teal-600 ml-3">◦</span>
           </h3>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             {description}
@@ -46,24 +45,24 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({
         >
           {/* First Image */}
           <div
-            className={`relative rounded-3xl overflow-hidden shadow-2xl ${
+            className={`relative rounded-3xl overflow-hidden  shadow-2xl ${
               hasTwoImages ? "" : "col-span-2"
             }`}
           >
             <img
               src={images[0]}
               alt={title}
-              className="w-full h-full object-cover aspect-square md:aspect-[4/5]"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Second Image – Only if provided */}
           {hasTwoImages && (
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl -mt-12 md:-mt-20 lg:-mt-28">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5]  shadow-2xl">
               <img
                 src={images[1]}
                 alt={title}
-                className="w-full h-full object-cover aspect-square md:aspect-[4/5]"
+                className="w-full h-full object-cover"
               />
             </div>
           )}

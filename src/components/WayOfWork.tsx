@@ -1,7 +1,7 @@
-
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import PlayIcon from "../assets/icons/PlayIcon";
 
 export default function WayOfWorking() {
   const { t, i18n } = useTranslation();
@@ -13,7 +13,7 @@ export default function WayOfWorking() {
   }, [i18n.language]);
 
   return (
-    <section className="w-full py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="w-full py-25 lg:py-32 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left: Image with browser frame and play button */}
         <div className="relative w-full rounded-xl overflow-hidden shadow-md">
@@ -35,14 +35,7 @@ export default function WayOfWorking() {
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-24 h-24 bg-green-600/90 rounded-full flex items-center justify-center cursor-pointer transition hover:bg-green-700/90">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="white"
-                className="w-10 h-10 ml-1"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
+              <PlayIcon />
             </div>
           </div>
         </div>
@@ -55,16 +48,19 @@ export default function WayOfWorking() {
           </h2>
 
           {/* Decorative curve */}
-          <div className="w-40 h-3 mb-6">
+          <div className="w-[476px] h-6 mb-6">
             <svg
-              viewBox="0 0 200 20"
+              width={487}
+              height={34}
+              viewBox="0 0 487 34"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5 15C60 -5 140 -5 195 15"
-                stroke="#15803d"
-                strokeWidth="4"
+                opacity="0.8"
+                d="M4.00098 30C73.6316 10.3798 266.915 -17.0885 483.001 30"
+                stroke="#017A41"
+                strokeWidth={8}
                 strokeLinecap="round"
               />
             </svg>

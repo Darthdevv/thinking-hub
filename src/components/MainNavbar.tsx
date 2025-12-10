@@ -1,9 +1,10 @@
         "use client";
 
         import { useState } from "react";
-        import { Menu, X, ChevronDown } from "lucide-react";
+        import { Menu, X } from "lucide-react";
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
+import LanguageDropdown from "./LanguageSwitcher";
 
         export default function MainNavbar() {
         const [isOpen, setIsOpen] = useState(false);
@@ -33,15 +34,7 @@
                 </a>
                 </div>
                 {/* Language */}
-                <button className="flex items-center gap-2 text-sm hover:text-green-400 transition">
-                <img
-                    src="https://flagcdn.com/20x15/gb.png"
-                    alt="UK"
-                    className="w-5 h-4"
-                />
-                <span>Eng</span>
-                <ChevronDown className="w-4 h-4" />
-                </button>
+                <LanguageDropdown/>
 
                 {/* CTA */}
                 <a
@@ -95,15 +88,7 @@
                 </a>
 
                 <div className="pt-4 border-t border-gray-700">
-                    <button className="flex items-center gap-3 text-lg w-full">
-                    <img
-                        src="https://flagcdn.com/20x15/gb.png"
-                        alt="UK"
-                        className="w-5 h-4"
-                    />
-                    <span>English</span>
-                    <ChevronDown className="w-5 h-5 ml-auto" />
-                    </button>
+                    <LanguageDropdown/>
                 </div>
 
                 <a

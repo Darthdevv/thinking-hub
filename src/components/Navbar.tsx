@@ -1,10 +1,11 @@
         "use client";
 
         import { useState, useEffect } from "react";
-        import { Menu, X, ChevronDown } from "lucide-react";
+        import { Menu, X } from "lucide-react";
         import videoSrc from "../assets/videos/Navbar/video.mp4";
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
+import LanguageDropdown from "./LanguageSwitcher";
 
         const slides = [
         {
@@ -69,15 +70,7 @@
                     Contact US
                 </a>
                 </div>
-                <button className="flex items-center gap-2 text-sm hover:text-green-400 transition">
-                <img
-                    src="https://flagcdn.com/20x15/gb.png"
-                    alt="UK flag"
-                    className="w-5 h-4"
-                />
-                <span>Eng</span>
-                <ChevronDown className="w-4 h-4" />
-                </button>
+                <LanguageDropdown/>
 
                 <a
                 href="#"
@@ -139,17 +132,7 @@
                     </a>
 
                     <div className="py-4 border-t border-gray-700">
-                    <button className="flex w-full items-center justify-between text-lg">
-                        <div className="flex items-center gap-3">
-                        <img
-                            src="https://flagcdn.com/20x15/gb.png"
-                            alt="UK flag"
-                            className="w-5 h-4"
-                        />
-                        <span>English</span>
-                        </div>
-                        <ChevronDown className="w-5 h-5" />
-                    </button>
+                     <LanguageDropdown/>
                     </div>
 
                     <a

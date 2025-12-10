@@ -1,4 +1,12 @@
 {
   "welcome": "Welcome to our website",
-  "description": "This is an English description."
+  "description": "This is an English description.",
+  "ourwayofworking": "OUR WAY OF WORKING",
+  "ourdesc": "We begin by seeing every organization as a living system—people, practices, and purpose all shaping one another. This lens helps leaders spot what’s working, surface what’s missing, and uncover the possibilities waiting to be unlocked— in themselves, their ideas, and their organizations. Our dynamic approach integrates three dimensions that social innovators need to build for the long-term.",
+  "howweworktitle1": "Leadership & Personal Mastery",
+  "howweworktitle2": "Organizational Effectiveness",
+  "howweworktitle3": "Innovation",
+  "howweworkdesc1": "We help leaders understand their natural capabilities, clarify their vision, and develop the skills require to lead an organization into the future.",
+  "howweworktdesc2": "We teach practical frameworks to assess community needs, translate insights into meaningful offerings, and build healthy, resilient organizations that can deliver high-impact results.",
+  "howweworkdesc3": "Innovation is grounded in human-centered design, where insight, creativity, and action continuously feed each other. Through collaborative workshops, rapid prototyping, and real-time feedback with stakeholders, we help teams stretch their thinking and test bold ideas early. This way of working brings energy, alignment, and momentum—turning abstract challenges into shared opportunities and actionable pathways forward."
 }
