@@ -1,70 +1,69 @@
-
+import React, { useEffect } from "react";
 import backgroundPattern from "../assets/images/pattern.png";
+import { useTranslation } from "react-i18next";
 
-const ContactFooter = () => {
+const ContactFooter: React.FC = () => {
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   return (
-    <footer className=" w-full relative bg-white overflow-hidden">
-      {/* Full background image – your exact file */}
+    <footer className="relative w-full bg-white overflow-hidden">
+      {/* Background pattern */}
       <div
-        className="absolute inset-0 opacity-50"
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `url(${backgroundPattern})`,
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
         }}
       />
 
-      {/* Optional subtle emerald overlay for perfect match */}
-      <div className="absolute inset-0 bg-emerald-50/20" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row items-start gap-12">
+        {/* Left: Contact Info + Title */}
+        <div className="flex-1 flex flex-col items-start">
+          <span className="text-xs md:text-sm font-semibold text-black tracking-widest mb-3">
+            {t("contactfootertitle")}
+          </span>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-snug">
+            {t("contactfooterdesc")}
+          </h2>
+        </div>
 
-      {/* Thick emerald top border
-      <div className="absolute bottom-0 left-0 right-0 h-4 bg-emerald-600" /> */}
-
-      <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 items-start text-center md:text-left">
-          {/* Left: Title */}
-          <div>
-            <p className="text-xs md:text-sm font-semibold text-emerald-700 uppercase tracking-widest mb-3">
-              Contact Info
-            </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-              We are always happy to
-              <br />
-              assist you
-            </h2>
+        {/* Email */}
+        <div className="flex-1 flex flex-col items-start space-y-2">
+          <span className="text-xs font-semibold text-gray-600 tracking-widest">
+            {t("contactfootersubtitle1")}
+          </span>
+          <div className="flex flex-col items-start">
+            <div className="w-6.5 h-1 my-6.5 bg-gray-900" />
+            <a
+              href="mailto:help@info.com"
+              className="text-lg font-medium text-gray-900 hover:text-emerald-600 transition-colors duration-200"
+            >
+              {t("example1")}
+            </a>
           </div>
+        </div>
 
-          {/* Email */}
-          <div className="space-y-4">
-            <p className="text-xs md:text-sm font-semibold text-gray-600 uppercase tracking-widest">
-              Email Address
-            </p>
-            <div className="flex items-center justify-center md:justify-start gap-6">
-              <div className="w-12 h-px bg-gray-900" />
-              <a
-                href="mailto:help@info.com"
-                className="text-lg md:text-xl font-medium text-gray-900 hover:text-emerald-600 transition-colors duration-200"
-              >
-                help@info.com
-              </a>
-            </div>
-          </div>
-
-          {/* Phone */}
-          <div className="space-y-4">
-            <p className="text-xs md:text-sm font-semibold text-gray-600 uppercase tracking-widest">
-              Number
-            </p>
-            <div className="flex items-center justify-center md:justify-start gap-6">
-              <div className="w-12 h-px bg-gray-900" />
-              <a
-                href="tel:+18089834256"
-                className="text-lg md:text-xl font-medium text-gray-900 hover:text-emerald-600 transition-colors duration-200"
-              >
-                (808) 988-34256
-              </a>
-            </div>
+        {/* Phone */}
+        <div className="flex-1 flex flex-col items-start space-y-2">
+          <span className="text-xs font-semibold text-gray-600 tracking-widest">
+            {t("contactfootersubtitle2")}
+          </span>
+          <div className="flex flex-col items-start gap-3">
+            <div className="w-6.5 h-1 my-6.5 bg-gray-900" />
+            <a
+              href="tel:+18089834256"
+              className="text-lg font-medium text-gray-900 hover:text-emerald-600 transition-colors duration-200"
+            >
+              {t("example2")}
+            </a>
           </div>
         </div>
       </div>

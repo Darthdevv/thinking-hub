@@ -25,8 +25,9 @@ import { useTranslation } from "react-i18next";
             {/* Logo */}
             <div className="flex items-center gap-4">
                 <div className=" p-2.5 rounded-lg">
-                <Link to={"/"}>
-                    <GreenLogo className="mr-2" />
+                <Link to={"/"} className="flex items-center justify-center">
+                    <GreenLogo className="mr-2 rtl:ml-2" />
+                    {t("logo")}
                 </Link>
                 </div>
             </div>
@@ -60,8 +61,9 @@ import { useTranslation } from "react-i18next";
             {/* Logo + Text */}
             <div className="flex items-center gap-3">
                 <div className=" p-2 rounded-lg">
-                <Link to={"/"}>
-                    <GreenLogo className="mr-2" />
+                <Link to={"/"} className="flex items-center justify-center">
+                    <GreenLogo className="mr-2 rtl:ml-2" />
+                    {t("logo")}
                 </Link>
                 </div>
             </div>

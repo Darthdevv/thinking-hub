@@ -65,8 +65,9 @@ export default function Navbar() {
             <nav className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 z-50 items-center justify-between bg-[#000201CC] backdrop-blur-md px-10 py-5 rounded-full shadow-2xl w-full max-w-6xl">
             <div className="flex items-center gap-4">
                 <div className=" p-2.5 rounded-lg">
-                <Link to={"/"}>
-                    <GreenLogo className="mr-2" />
+                <Link to={"/"} className="flex items-center justify-center">
+                    <GreenLogo className="mr-2 rtl:ml-2" />
+                    {t("logo")}
                 </Link>
                 </div>
             </div>
@@ -95,8 +96,9 @@ export default function Navbar() {
             <nav className="md:hidden absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-[#000201CC]">
             <div className="flex items-center gap-3">
                 <div className=" p-2 rounded-lg">
-                <Link to={"/"}>
-                    <GreenLogo className="mr-2" />
+                <Link to={"/"} className="flex items-center justify-center">
+                    <GreenLogo className="mr-2 rtl:ml-2" />
+                    {t("logo")}
                 </Link>
                 </div>
             </div>
