@@ -43,12 +43,12 @@ const GoalCallToAction = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-5xl mx-auto text-center">
+            <div className="relative z-10 max-w-7xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
                 {t("ctatitle")}
               </h2>
 
-              <p className="text-lg md:text-xl lg:text-2xl text-emerald-50 leading-relaxed max-w-4xl mx-auto mb-12">
+              <p className="text-lg md:text-xl lg:text-2xl text-emerald-50 leading-relaxed w-full  mb-12">
                 {t("ctadesc")}
               </p>
 

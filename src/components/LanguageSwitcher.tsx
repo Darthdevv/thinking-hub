@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import ksa from "../assets/images/ksaa.png";
+import usa from "../assets/images/usa.png";
 
 export default function LanguageDropdown() {
   const { i18n } = useTranslation();
@@ -17,12 +19,12 @@ export default function LanguageDropdown() {
     {
       code: "en",
       label: "English",
-      flag: "https://flagcdn.com/24x18/gb.png",
+      flag: usa,
     },
     {
       code: "ar",
       label: "العربية",
-      flag: "https://flagcdn.com/24x18/sa.png",
+      flag: ksa,
     },
   ];
 
@@ -37,7 +39,7 @@ export default function LanguageDropdown() {
       >
         <img
           src={active?.flag}
-          className="w-5 h-4 rounded-sm object-cover"
+          className="w-4.5 h-4.5 rounded-full object-cover"
           alt=""
         />
         <span>{active?.code === "en" ? "English" : "العربية"}</span>
@@ -55,7 +57,7 @@ export default function LanguageDropdown() {
             >
               <img
                 src={lang.flag}
-                className="w-5 h-4 rounded-sm object-cover"
+                className="w-4.5 h-4.5 rounded-full object-cover"
                 alt=""
               />
               <span>{lang.label}</span>

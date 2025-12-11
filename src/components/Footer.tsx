@@ -36,9 +36,9 @@ const Footer = () => {
 
   // Define link arrays for each section
   const designThinkingHubLinks = [
-    { label: t("designThinkingHubLink1"), to: "#" },
-    { label: t("designThinkingHubLink2"), to: "#" },
-    { label: t("designThinkingHubLink3"), to: "#" },
+    { label: t("designThinkingHubLink1"), to: "/how-we-work" },
+    { label: t("designThinkingHubLink2"), to: "/contact-us" },
+    { label: t("designThinkingHubLink3"), to: "/how-we-work" },
   ];
 
   const programTracksLinks = [
@@ -79,10 +79,13 @@ const Footer = () => {
             </div> */}
 
       {/* Middle Section */}
-      <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
         {/* Logo and Description */}
         <div className="flex flex-col gap-4 md:gap-6 max-w-xs">
-          <GreenLogo />
+          <Link to={"/"} className="flex items-center justify-start">
+            <GreenLogo className="mr-2 rtl:ml-2 rtl:mr-0" />
+            <span className="text-white">{t("logo")}</span>
+          </Link>
           <h1 className="text-sm sm:text-base font-normal">
             {t("footerdesc")}
           </h1>
@@ -144,7 +147,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
+      <div className=" max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
         <h1 className="font-normal text-sm sm:text-base">
           © {new Date().getFullYear()}
           {t("copyrights")}

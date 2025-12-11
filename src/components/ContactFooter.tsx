@@ -26,11 +26,11 @@ const ContactFooter: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row items-start gap-12">
         {/* Left: Contact Info + Title */}
-        <div className="flex-1 flex flex-col items-start">
+        <div className="flex flex-col items-start">
           <span className="text-xs md:text-sm font-semibold text-black tracking-widest mb-3">
             {t("contactfootertitle")}
           </span>
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-snug">
+          <h2 className="text-5xl max-md:text-4xl font-bold text-gray-900 leading-snug w-[600px] max-md:w-full">
             {t("contactfooterdesc")}
           </h2>
         </div>

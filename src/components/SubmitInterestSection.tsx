@@ -74,11 +74,24 @@ const ContactFormSection = () => {
   return (
     <section className="relative bg-white py-16 px-6 max-sm:px-0 md:py-24 md:px-12 lg:px-24 overflow-hidden">
       {/* Curved background */}
-      <div className="relative max-w-7xl text-start mx-auto max-sm:pl-2 mb-[88px]">
+      <div className="relative max-w-7xl text-start max-md:text-center mx-auto max-sm:pl-2 mb-[88px]">
         <h2 className="text-xl text-black mb-8">{t("contactustitle")}</h2>
         <p className="text-5xl font-bold text-black w-[659px] max-sm:w-full">
           {t("contactusdesc")}
         </p>
+
+        {/* Mobile-only social icons - placed here just like in the design */}
+        <div className="flex sm:hidden justify-center gap-6 mt-10 mb-4">
+          <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+            <Facebook />
+          </button>
+          <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+            <Instagram />
+          </button>
+          <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+            <TwitterIcon />
+          </button>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12">
@@ -178,14 +191,14 @@ const ContactFormSection = () => {
       </div>
 
       {/* Social Icons */}
-      <div className="absolute top-16 right-36 max-sm:right-4 flex flex-col gap-4 z-20 rtl:right-auto rtl:left-36 rtl:max-sm:left-4">
-        <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+      <div className="absolute top-16 right-36 max-sm:right-4 hidden lg:flex flex-col gap-4 z-20 rtl:right-auto rtl:left-36 rtl:max-sm:left-4">
+        <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
           <Facebook />
         </button>
-        <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+        <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
           <Instagram />
         </button>
-        <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+        <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
           <TwitterIcon />
         </button>
       </div>

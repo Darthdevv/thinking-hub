@@ -1,41 +1,39 @@
-        "use client";
+    "use client";
 
-        import { useState, useEffect } from "react";
-        import { Menu, X } from "lucide-react";
-        import videoSrc from "../assets/videos/Navbar/video.mp4";
+    import { useState, useEffect } from "react";
+    import { Menu, X } from "lucide-react";
+    import videoSrc from "../assets/videos/Navbar/esign.mp4";
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
-import LanguageDropdown from "./LanguageSwitcher";
-import Rocket from "../assets/icons/Rocket";
-import { useTranslation } from "react-i18next";
+    import LanguageDropdown from "./LanguageSwitcher";
+    import Rocket from "../assets/icons/Rocket";
+    import { useTranslation } from "react-i18next";
 
+    export default function Navbar() {
+        const { t, i18n } = useTranslation();
+        const [currentSlide, setCurrentSlide] = useState(0);
+        const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default function Navbar() {
-            const { t, i18n } = useTranslation();
-            const [currentSlide, setCurrentSlide] = useState(0);
-            const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-            useEffect(() => {
+        useEffect(() => {
             const dir = i18n.language === "ar" ? "rtl" : "ltr";
             document.documentElement.dir = dir;
             document.documentElement.lang = i18n.language;
-            }, [i18n.language]);
+        }, [i18n.language]);
 
         const slides = [
-        {
+            {
             title: t("herotitle1"),
             description: t("herodesc1"),
             button1: t("herobtn1"),
             button2: t("herosecondbtn1"),
-        },
-        {
+            },
+            {
             title: t("herotitle2"),
             description: t("herodesc2"),
             button1: t("herobtn2"),
             button2: t("herosecondbtn2"),
-        },
+            },
         ];
-
 
         useEffect(() => {
             const interval = setInterval(
@@ -43,7 +41,7 @@ export default function Navbar() {
             5000
             );
             return () => clearInterval(interval);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []);
 
         return (
@@ -56,7 +54,7 @@ export default function Navbar() {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-[1.2] max-sm:scale-[1.35]"
+                className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50" />
             </div>
@@ -74,20 +72,26 @@ export default function Navbar() {
 
             <div className="flex items-center gap-8">
                 <div className="flex items-center gap-8 text-sm">
-                <a href="/how-we-work" className="hover:border-b-2 hover:border-[#008346] transition">
+                <a
+                    href="/how-we-work"
+                    className="hover:border-b-2 hover:border-[#008346] transition"
+                >
                     {t("navlink1")}
                 </a>
-                <a href="/contact-us" className="hover:border-b-2 hover:border-[#008346] transition">
+                <a
+                    href="/contact-us"
+                    className="hover:border-b-2 hover:border-[#008346] transition"
+                >
                     {t("navlink2")}
                 </a>
                 </div>
-                <LanguageDropdown/>
+                <LanguageDropdown />
 
                 <a
                 href="/contact-us"
                 className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition shadow-md"
                 >
-                    {t("navbtn")} <Rocket/>
+                {t("navbtn")} <Rocket />
                 </a>
             </div>
             </nav>
@@ -121,24 +125,24 @@ export default function Navbar() {
                     href="/how-we-work"
                     className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
-                        {t("navlink1")}
+                    {t("navlink1")}
                     </a>
                     <a
                     href="/contact-us"
                     className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
-                        {t("navlink2")}
+                    {t("navlink2")}
                     </a>
 
                     <div className="py-4 border-t border-[#008346]">
-                        <LanguageDropdown/>
+                    <LanguageDropdown />
                     </div>
 
                     <a
                     href="/contact-us"
                     className=" text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                     >
-                        {t("navbtn")} <Rocket/>
+                    {t("navbtn")} <Rocket />
                     </a>
                 </div>
                 </div>
@@ -157,28 +161,32 @@ export default function Navbar() {
                 </p>
 
                 <div className="flex items-center justify-center gap-6  text-center mx-auto w-full">
-                <button className="bg-[#008346] hover:bg-[#008346] px-8 py-4 rounded-lg font-semibold transition shadow-lg">
+                <Link to={'/contact-us'}>
+                    <button className="bg-[#008346] hover:bg-[#008346] px-8 py-4 rounded-lg font-semibold transition shadow-lg">
                     {slides[currentSlide].button1}
-                </button>
+                    </button>
+                </Link>
 
-                <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black backdrop-blur transition">
+                <Link to={'/how-we-work'}>
+                    <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black backdrop-blur transition">
                     {slides[currentSlide].button2}
-                </button>
+                    </button>
+                </Link>
                 </div>
 
                 {/* <div className="flex gap-3 mt-32 md:mt-48">
-                {slides.map((_, index) => (
-                    <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                        currentSlide === index ? "bg-white w-12" : "bg-white/40 w-4"
-                    }`}
-                    />
-                ))}
-                </div> */}
+                        {slides.map((_, index) => (
+                            <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-1 rounded-full transition-all duration-300 ${
+                                currentSlide === index ? "bg-white w-12" : "bg-white/40 w-4"
+                            }`}
+                            />
+                        ))}
+                        </div> */}
             </div>
             </div>
         </div>
         );
-        }
+    }

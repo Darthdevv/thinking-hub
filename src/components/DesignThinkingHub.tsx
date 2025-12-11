@@ -1,4 +1,4 @@
-import patternImage from "../assets/images/About.png";
+// import patternImage from "../assets/images/About.png";
 import Mission from "../assets/icons/Mission";
 import Vision from "../assets/icons/Vision";
 import Values from "../assets/icons/Values";
@@ -18,10 +18,10 @@ export default function AboutSection() {
     <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Header + Pattern Image */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-10">
           {/* Left Text */}
-          <div className="max-w-3xl">
-            <p className="text-green-600 font-medium text-sm tracking-widest mb-4">
+          <div className="max-w-7xl">
+            <p className="text-green-600 font-semibold text-lg tracking-widest mb-4">
               {t("aboutheader")}
             </p>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -33,13 +33,13 @@ export default function AboutSection() {
           </div>
 
           {/* Right Pattern Image */}
-          <div className="hidden lg:block flex-shrink-0">
+          {/* <div className="hidden lg:block flex-shrink-0">
             <img
               src={patternImage}
               alt="Decorative pattern"
               className="w-[320px] lg:w-[450px] xl:w-[520px]"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Mission | Vision | Values */}
