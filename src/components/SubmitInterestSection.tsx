@@ -38,7 +38,7 @@ const ContactFormSection = () => {
       Name: fullName,
       email,
       phone: `${countryCode}${phoneNumber}`,
-      // role,
+      role,
     };
 
     try {
