@@ -17,6 +17,7 @@ const ContactFormSection = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const API_URL = import.meta.env.VITE_API;
 
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const ContactFormSection = () => {
       setLoading(true);
       setMessage("");
 
-      const response = await fetch("/api/contacts", {
+      const response = await fetch(`${API_URL}/contacts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +99,7 @@ const ContactFormSection = () => {
         <div className="absolute -z-10 w-[1322px] max-sm:w-full h-[644px] inset-0 bg-[#047857] rounded-tr-[600px] max-sm:rounded-none rtl:rounded-tr-none max-sm:rtl:rounded-tl-none rtl:rounded-tl-[600px] "></div>
 
         {/* Form */}
-        <div className="bg-[#056438] rounded-none p-8 md:p-12 flex-1 w-[541px] max-sm:w-[450px] max-sm:px-10 max-sm:h-[504px] h-[564px] shadow-lg ml-10 rtl:ml-0 max-sm:rtl:ml-10 rtl:mr-10 max-sm:ml-0 mt-10">
+        <div className="bg-[#056438] rounded-none p-8 md:p-12 flex-1 w-[541px] max-sm:w-[360px] max-sm:px-10 max-sm:h-[504px] h-[564px] shadow-lg ml-10 rtl:ml-0 max-sm:rtl:ml-10 rtl:mr-10 max-sm:ml-0 mt-10">
           <h2 className="text-white text-lg font-medium mb-2.5">
             {t("contactustitle")}
           </h2>
