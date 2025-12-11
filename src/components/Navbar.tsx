@@ -72,18 +72,18 @@
 
             <div className="flex items-center gap-8">
                 <div className="flex items-center gap-8 text-sm">
-                <a
-                    href="/how-we-work"
+                <Link
+                    to={"/how-we-work"}
                     className="hover:border-b-2 hover:border-[#008346] transition"
                 >
                     {t("navlink1")}
-                </a>
-                <a
-                    href="/contact-us"
+                </Link>
+                <Link
+                    to={"/contact-us"}
                     className="hover:border-b-2 hover:border-[#008346] transition"
                 >
                     {t("navlink2")}
-                </a>
+                </Link>
                 </div>
                 <LanguageDropdown />
 
@@ -121,18 +121,18 @@
             <div className="md:hidden absolute top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
                 <div className="bg-[#000201CC] text-white rounded-3xl shadow-2xl border border-[#008346]">
                 <div className="p-8 space-y-6">
-                    <a
-                    href="/how-we-work"
+                    <Link
+                    to={"/how-we-work"}
                     className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
                     {t("navlink1")}
-                    </a>
-                    <a
-                    href="/contact-us"
+                    </Link>
+                    <Link
+                    to={"/contact-us"}
                     className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
                     {t("navlink2")}
-                    </a>
+                    </Link>
 
                     <div className="py-4 border-t border-[#008346]">
                     <LanguageDropdown />

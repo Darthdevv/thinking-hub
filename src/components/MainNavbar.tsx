@@ -36,12 +36,12 @@ import { useTranslation } from "react-i18next";
             <div className="flex items-center gap-8">
                 {/* Links */}
                 <div className="flex items-center gap-8 text-sm">
-                <a href="/how-we-work" className="hover:border-b-2 hover:border-[#008346] transition">
+                <Link to={"/how-we-work"} className="hover:border-b-2 hover:border-[#008346] transition">
                     {t("navlink1")}
-                </a>
-                <a href="/contact-us" className="hover:border-b-2 hover:border-[#008346] transition">
+                </Link>
+                <Link to={"/contact-us"} className="hover:border-b-2 hover:border-[#008346] transition">
                     {t("navlink2")}
-                </a>
+                </Link>
                 </div>
                 {/* Language */}
                 <LanguageDropdown/>
@@ -78,12 +78,12 @@ import { useTranslation } from "react-i18next";
             {isOpen && (
             <div className="md:hidden bg-[#000201CC] text-white border-t border-[#008346]">
                 <div className="px-6 py-6 space-y-6">
-                <a href="/how-we-work" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
+                <Link to={"/how-we-work"} className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
                     {t("navlink1")}
-                </a>
-                <a href="/contact-us" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
+                </Link>
+                <Link to={"/contact-us"} className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
                     {t("navlink2")}
-                </a>
+                </Link>
 
                 <div className="pt-4 border-t border-[#008346]">
                     <LanguageDropdown/>
