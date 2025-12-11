@@ -67,17 +67,12 @@ export default function WayOfWorking() {
           </div>
 
           <p className="text-gray-600 leading-relaxed mb-6">
-            We begin by seeing every organization as a living system—people,
-            practices, and purpose all shaping one another. This lens helps
-            leaders spot what's working, surface what's missing, and uncover the
-            possibilities waiting to be unlocked – in themselves, their ideas,
-            and their organizations. Our dynamic approach integrates three
-            dimensions that social innovators need to build for the long-term.
+            {t("subdescription")}
           </p>
 
           {/* Explore More */}
           <button className="flex items-center gap-2 text-green-700 font-semibold hover:underline">
-            Explore More <ArrowRight className="w-4 h-4" />
+            {t("btntext")} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

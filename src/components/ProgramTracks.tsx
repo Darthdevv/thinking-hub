@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RocketIcon from "../assets/icons/RocketIcon";
 import ChartIcon from "../assets/icons/ChartIcon";
 import ZapIcon from "../assets/icons/ZapIcon";
+import { useTranslation } from "react-i18next";
 // import RightArrow from "../assets/icons/RightArrow";
 // import Pattern from "../assets/svgs/pattern.svg"
 
@@ -14,44 +15,48 @@ interface Track {
   iconcolor: string;
 }
 
-const tracks: Track[] = [
-  {
-    icon: <RocketIcon />,
-    title: "Start-Up Program",
-    description:
-      "Our Start-Up Program is designed to support early-stage entrepreneurs with bold ideas and high-growth potential. Through a structured journey, we provide the resources, mentorship, and networks needed to transform a concept into a thriving business.",
-    color: "bg-[#F7D5C9]",
-    iconcolor: "bg-[#D3624C]",
-  },
-  {
-    icon: <ChartIcon />,
-    title: "Growth Program",
-    description:
-      "The Growth Program is designed for startups that have moved beyond the MVP stage and are ready to accelerate traction, expand market reach, and scale sustainably. This program equips founders with the strategies, tools, and networks needed to break through growth barriers and build resilient, high-performing businesses.",
-    color: "bg-[#D9D4F0]",
-    iconcolor: "bg-[#7670B2]",
-  },
-  {
-    icon: <ZapIcon />,
-    title: "Maturity Program",
-    description:
-      "The Maturity Program supports established businesses and social enterprises that have achieved stability and are now focused on deepening impact, expanding strategically, and building resilient leadership and operational systems.",
-    color: "bg-[#B7E3E4]",
-    iconcolor: "bg-[#00A1A1]",
-  },
-];
-
 const ProgramTracks: React.FC = () => {
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  const tracks: Track[] = [
+    {
+      icon: <RocketIcon />,
+      title: t("programtitle1"),
+      description: t("programdesc1"),
+      color: "bg-[#F7D5C9]",
+      iconcolor: "bg-[#D3624C]",
+    },
+    {
+      icon: <ChartIcon />,
+      title: t("programtitle2"),
+      description: t("programdesc2"),
+      color: "bg-[#D9D4F0]",
+      iconcolor: "bg-[#7670B2]",
+    },
+    {
+      icon: <ZapIcon />,
+      title: t("programtitle3"),
+      description: t("programdesc3"),
+      color: "bg-[#B7E3E4]",
+      iconcolor: "bg-[#00A1A1]",
+    },
+  ];
+
   return (
     <section className="bg-[#F5F5F5] min-h-screen px-4 py-12 md:px-8 lg:px-16 grid place-items-center">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2 className="text-5xl max-md:text-4xl font-bold text-gray-900 mb-3">
-          Program Tracks
+          {t("programmaintitle")}
         </h2>
         <p className="text-[#414651] mt-2 mb-12 max-w-xl text-base">
-          Choose the program that matches your venture’s current stage and
-          needs.
+          {t("programmaindesc")}
         </p>
 
         {/* Cards */}

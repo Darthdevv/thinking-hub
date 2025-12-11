@@ -5,23 +5,33 @@ import pic3 from "../assets/images/Picture (2).png";
 import Leadership from "../assets/icons/Leadership";
 import Organizational from "../assets/icons/Organizational";
 import Innovation from "../assets/icons/Innovation";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function IntroSection() {
+    const { t, i18n } = useTranslation();
+  
+    useEffect(() => {
+      const dir = i18n.language === "ar" ? "rtl" : "ltr";
+      document.documentElement.dir = dir;
+      document.documentElement.lang = i18n.language;
+    }, [i18n.language]);
+
   const items = [
     {
-      title: "Leadership & Personal Mastery",
-      text: "We help leaders understand their natural gifts, clarify their vision, and develop the skills required for the work ahead.",
-      icon: <Leadership/>
+      title: t("introtitle1"),
+      text: t("introdesc1"),
+      icon: <Leadership />,
     },
     {
-      title: "Organizational Effectiveness",
-      text: "We teach practical frameworks to assess community needs, translate insights into meaningful offerings, and build healthy, resilient organizations that can deliver.",
-      icon: <Organizational/>
+      title: t("introtitle2"),
+      text: t("introdesc2"),
+      icon: <Organizational />,
     },
     {
-      title: "Innovation & Collaboration",
-      text: "We equip leaders with design tools that enable them to work creatively with clients, colleagues, and sector partners to imagine and build what's possible.",
-      icon: <Innovation/>
+      title: t("introtitle3"),
+      text: t("introdesc3"),
+      icon: <Innovation />,
     },
   ];
 
@@ -42,7 +52,7 @@ export default function IntroSection() {
         {/* Left Text Section */}
         <div>
           <h2 className="text-3xl font-semibold text-white mb-8">
-            Introductory Sentence:
+            {t("intromaintext")}
           </h2>
 
           <div className="space-y-8 text-white">

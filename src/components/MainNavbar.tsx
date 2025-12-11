@@ -1,14 +1,22 @@
         "use client";
 
-        import { useState } from "react";
+        import { useEffect, useState } from "react";
         import { Menu, X } from "lucide-react";
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
 import LanguageDropdown from "./LanguageSwitcher";
 import Rocket from "../assets/icons/Rocket";
+import { useTranslation } from "react-i18next";
 
         export default function MainNavbar() {
-        const [isOpen, setIsOpen] = useState(false);
+            const [isOpen, setIsOpen] = useState(false);
+            const { t, i18n } = useTranslation();
+
+            useEffect(() => {
+            const dir = i18n.language === "ar" ? "rtl" : "ltr";
+            document.documentElement.dir = dir;
+            document.documentElement.lang = i18n.language;
+            }, [i18n.language]);
 
         return (
         <>
@@ -28,10 +36,10 @@ import Rocket from "../assets/icons/Rocket";
                 {/* Links */}
                 <div className="flex items-center gap-8 text-sm">
                 <a href="/how-we-work" className="hover:border-b-2 hover:border-[#008346] transition">
-                    How We Work
+                    {t("navlink1")}
                 </a>
                 <a href="/contact-us" className="hover:border-b-2 hover:border-[#008346] transition">
-                    Contact US
+                    {t("navlink2")}
                 </a>
                 </div>
                 {/* Language */}
@@ -42,7 +50,7 @@ import Rocket from "../assets/icons/Rocket";
                 href="/contact-us"
                 className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition"
                 >
-                Submit Interest <Rocket/>
+                {t("navbtn")} <Rocket/>
                 </a>
             </div>
             </nav>
@@ -69,10 +77,10 @@ import Rocket from "../assets/icons/Rocket";
             <div className="md:hidden bg-[#000201CC] text-white border-t border-[#008346]">
                 <div className="px-6 py-6 space-y-6">
                 <a href="/how-we-work" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
-                    How We Work
+                    {t("navlink1")}
                 </a>
                 <a href="/contact-us" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
-                    Contact US
+                    {t("navlink2")}
                 </a>
 
                 <div className="pt-4 border-t border-[#008346]">
@@ -83,7 +91,7 @@ import Rocket from "../assets/icons/Rocket";
                     href="/contact-us"
                     className="text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                 >
-                    Submit Interest <Rocket/>
+                    {t("navbtn")} <Rocket/>
                 </a>
                 </div>
             </div>
