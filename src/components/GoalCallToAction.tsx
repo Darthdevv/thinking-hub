@@ -1,8 +1,19 @@
 import { ArrowRight } from "lucide-react";
 import rightBlob from "../assets/images/Vector.png";
 import leftBlob from "../assets/images/Vector (1).png";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 const GoalCallToAction = () => {
+    const { t, i18n } = useTranslation();
+  
+    useEffect(() => {
+      const dir = i18n.language === "ar" ? "rtl" : "ltr";
+      document.documentElement.dir = dir;
+      document.documentElement.lang = i18n.language;
+    }, [i18n.language]);
+
   return (
     <section className="relative py-20 md:py-28 lg:py-32">
       <div className="relative max-w-8xl mx-auto px-6 md:px-12 lg:px-16">
@@ -34,20 +45,19 @@ const GoalCallToAction = () => {
             {/* Content */}
             <div className="relative z-10 max-w-5xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-                Our goal is simple
+                {t("ctatitle")}
               </h2>
 
               <p className="text-lg md:text-xl lg:text-2xl text-emerald-50 leading-relaxed max-w-4xl mx-auto mb-12">
-                Accelerate your ability to create lasting change by creating a
-                more adaptive, inspired organization — one that moves fluidly
-                from insight to innovation to action and deliver meaningful
-                progress for the communities you serve.
+                {t("ctadesc")}
               </p>
 
-              <button className="group inline-flex items-center gap-4 bg-white text-emerald-800 font-bold text-lg lg:text-xl px-10 py-6 rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
-                Submit Interest
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform duration-300" />
-              </button>
+              <Link to={'/contact-us'}>
+                <button className="group inline-flex items-center gap-4 bg-white text-emerald-800 font-bold text-lg lg:text-xl px-10 py-6 rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
+                  {t("ctabtn")}
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform duration-300" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

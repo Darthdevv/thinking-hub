@@ -2,7 +2,7 @@ import React from "react";
 import RocketIcon from "../assets/icons/RocketIcon";
 import ChartIcon from "../assets/icons/ChartIcon";
 import ZapIcon from "../assets/icons/ZapIcon";
-import RightArrow from "../assets/icons/RightArrow";
+// import RightArrow from "../assets/icons/RightArrow";
 // import Pattern from "../assets/svgs/pattern.svg"
 
 
@@ -62,7 +62,7 @@ const ProgramTracks: React.FC = () => {
               className={`${track.color} h-[480px] rounded-lg overflow-hidden shadow-sm flex flex-col`}
             >
               {/* Card Content */}
-              <div className="p-6 flex-1 flex flex-col">
+              <div className="p-10 flex-1 flex flex-col justify-center">
                 {/* Icon */}
                 <div
                   className={`${track.iconcolor} w-12 h-12 rounded-full flex items-center justify-center mb-5`}
@@ -82,7 +82,7 @@ const ProgramTracks: React.FC = () => {
               </div>
 
               {/* Know More with arrow */}
-              <div className="px-6 pb-4">
+              {/* <div className="px-6 pb-4">
                 <a
                   href="#"
                   className="inline-flex items-center gap-1 text-base font-medium text-[#414651] hover:underline"
@@ -90,7 +90,7 @@ const ProgramTracks: React.FC = () => {
                   Know More
                   <RightArrow />
                 </a>
-              </div>
+              </div> */}
 
               {/* Footer pattern SVG */}
               {/* <div className="h-15 w-full">

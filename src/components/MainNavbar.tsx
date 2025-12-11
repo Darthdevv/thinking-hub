@@ -5,6 +5,7 @@
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
 import LanguageDropdown from "./LanguageSwitcher";
+import Rocket from "../assets/icons/Rocket";
 
         export default function MainNavbar() {
         const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ import LanguageDropdown from "./LanguageSwitcher";
         return (
         <>
             {/* ====================== DESKTOP & TABLET – PILL STYLE ====================== */}
-            <nav className="hidden md:flex items-center justify-between bg-gray-900 text-white px-8 py-5 rounded-full w-full max-w-7xl mx-auto my-8">
+            <nav className="hidden md:flex items-center justify-between bg-[#000201CC] text-white px-8 py-5 rounded-full w-full max-w-7xl mx-auto my-8">
             {/* Logo */}
             <div className="flex items-center gap-4">
                 <div className=" p-2.5 rounded-lg">
@@ -25,11 +26,11 @@ import LanguageDropdown from "./LanguageSwitcher";
             {/* Right side */}
             <div className="flex items-center gap-8">
                 {/* Links */}
-                <div className="flex items-center gap-12 text-sm">
-                <a href="#" className="hover:text-green-400 transition">
+                <div className="flex items-center gap-8 text-sm">
+                <a href="/how-we-work" className="hover:border-b-2 hover:border-[#008346] transition">
                     How We Work
                 </a>
-                <a href="#" className="hover:text-green-400 transition">
+                <a href="/contact-us" className="hover:border-b-2 hover:border-[#008346] transition">
                     Contact US
                 </a>
                 </div>
@@ -38,29 +39,16 @@ import LanguageDropdown from "./LanguageSwitcher";
 
                 {/* CTA */}
                 <a
-                href="#"
-                className="bg-green-500 hover:bg-green-600 text-gray-900 font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition"
+                href="/contact-us"
+                className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition"
                 >
-                Submit Interest
-                <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={3}
-                    d="M9 5l7 7-7 7"
-                    />
-                </svg>
+                Submit Interest <Rocket/>
                 </a>
             </div>
             </nav>
 
             {/* ====================== MOBILE – EXACTLY LIKE YOUR LAST IMAGE ====================== */}
-            <nav className="md:hidden bg-gray-900 text-white flex items-center justify-between px-5 py-4">
+            <nav className="md:hidden bg-[#000201CC] text-white flex items-center justify-between px-5 py-4">
             {/* Logo + Text */}
             <div className="flex items-center gap-3">
                 <div className=" p-2 rounded-lg">
@@ -78,24 +66,24 @@ import LanguageDropdown from "./LanguageSwitcher";
 
             {/* Mobile Menu Dropdown (appears below the bar) */}
             {isOpen && (
-            <div className="md:hidden bg-gray-800 border-t border-gray-700">
+            <div className="md:hidden bg-[#000201CC] text-white border-t border-[#008346]">
                 <div className="px-6 py-6 space-y-6">
-                <a href="#" className="block text-lg hover:text-green-400">
+                <a href="/how-we-work" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
                     How We Work
                 </a>
-                <a href="#" className="block text-lg hover:text-green-400">
+                <a href="/contact-us" className="block text-lg hover:border-b-2 hover:border-[#008346] transition">
                     Contact US
                 </a>
 
-                <div className="pt-4 border-t border-gray-700">
+                <div className="pt-4 border-t border-[#008346]">
                     <LanguageDropdown/>
                 </div>
 
                 <a
-                    href="#"
-                    className="block text-center bg-green-500 hover:bg-green-600 text-gray-900 font-semibold py-4 rounded-full shadow-lg"
+                    href="/contact-us"
+                    className="text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                 >
-                    Submit Interest →
+                    Submit Interest <Rocket/>
                 </a>
                 </div>
             </div>

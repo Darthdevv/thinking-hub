@@ -34,7 +34,7 @@ export default function WayOfWorking() {
 
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 bg-green-600/90 rounded-full flex items-center justify-center cursor-pointer transition hover:bg-green-700/90">
+            <div className="w-24 h-24 bg-[#17b26acc] rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#17b26a]">
               <PlayIcon />
             </div>
           </div>

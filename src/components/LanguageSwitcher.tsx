@@ -33,7 +33,7 @@ export default function LanguageDropdown() {
       {/* Trigger button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 text-sm hover:text-green-400 transition"
+        className="flex items-center gap-2 text-sm  hover:border-b-2 hover:border-[#008346] transition"
       >
         <img
           src={active?.flag}
@@ -46,12 +46,12 @@ export default function LanguageDropdown() {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 mt-2 w-36 bg-gray-900 border border-gray-700 rounded-lg shadow-lg py-2 z-50">
+        <div className="absolute right-0 mt-2 w-36 bg-[#000201CC] border border-[#008346] rounded-lg shadow-lg py-2 z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code as "en" | "ar")}
-              className="w-full flex items-center gap-3 px-3 py-2 hover:bg-gray-800 text-left"
+              className="w-full flex items-center gap-3 px-3 py-2 hover:bg-zinc-800 text-left"
             >
               <img
                 src={lang.flag}

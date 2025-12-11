@@ -6,6 +6,7 @@
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
 import LanguageDropdown from "./LanguageSwitcher";
+import Rocket from "../assets/icons/Rocket";
 
         const slides = [
         {
@@ -48,11 +49,11 @@ import LanguageDropdown from "./LanguageSwitcher";
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover scale-[1.2] max-sm:scale-[1.35]"
             />
-            <div className="absolute inset-0 bg-black/65" />
+            <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* DESKTOP NAVBAR */}
-            <nav className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 z-50 items-center justify-between bg-gray-900/95 backdrop-blur-md px-10 py-5 rounded-full shadow-2xl w-full max-w-6xl">
+            <nav className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 z-50 items-center justify-between bg-[#000201CC] backdrop-blur-md px-10 py-5 rounded-full shadow-2xl w-full max-w-6xl">
             <div className="flex items-center gap-4">
                 <div className=" p-2.5 rounded-lg">
                 <Link to={"/"}>
@@ -62,40 +63,27 @@ import LanguageDropdown from "./LanguageSwitcher";
             </div>
 
             <div className="flex items-center gap-8">
-                <div className="flex items-center gap-12 text-sm">
-                <a href="#" className="hover:text-green-400 transition">
+                <div className="flex items-center gap-8 text-sm">
+                <a href="/how-we-work" className="hover:border-b-2 hover:border-[#008346] transition">
                     How We Work
                 </a>
-                <a href="#" className="hover:text-green-400 transition">
+                <a href="/contact-us" className="hover:border-b-2 hover:border-[#008346] transition">
                     Contact US
                 </a>
                 </div>
                 <LanguageDropdown/>
 
                 <a
-                href="#"
-                className="bg-green-500 hover:bg-green-600 text-gray-900 font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition shadow-md"
+                href="/contact-us"
+                className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition shadow-md"
                 >
-                Submit Interest
-                <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={3}
-                    d="M9 5l7 7-7 7"
-                    />
-                </svg>
+                Submit Interest <Rocket/>
                 </a>
             </div>
             </nav>
 
             {/* MOBILE NAVBAR */}
-            <nav className="md:hidden absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-gray-900">
+            <nav className="md:hidden absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-[#000201CC]">
             <div className="flex items-center gap-3">
                 <div className=" p-2 rounded-lg">
                 <Link to={"/"}>
@@ -116,30 +104,30 @@ import LanguageDropdown from "./LanguageSwitcher";
             {/* MOBILE MENU */}
             {isMobileMenuOpen && (
             <div className="md:hidden absolute top-20 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
-                <div className="bg-gray-900 rounded-3xl shadow-2xl border border-gray-800">
+                <div className="bg-[#000201CC] text-white rounded-3xl shadow-2xl border border-[#008346]">
                 <div className="p-8 space-y-6">
                     <a
-                    href="#"
-                    className="block text-lg hover:text-green-400 transition"
+                    href="/how-we-work"
+                    className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
                     How We Work
                     </a>
                     <a
-                    href="#"
-                    className="block text-lg hover:text-green-400 transition"
+                    href="/contact-us"
+                    className="block text-lg hover:border-b-2 hover:border-[#008346] transition"
                     >
                     Contact US
                     </a>
 
-                    <div className="py-4 border-t border-gray-700">
-                     <LanguageDropdown/>
+                    <div className="py-4 border-t border-[#008346]">
+                        <LanguageDropdown/>
                     </div>
 
                     <a
-                    href="#"
-                    className="block text-center bg-green-500 hover:bg-green-600 text-gray-900 font-semibold py-4 rounded-full shadow-lg"
+                    href="/contact-us"
+                    className=" text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                     >
-                    Submit Interest →
+                    Submit Interest <Rocket/>
                     </a>
                 </div>
                 </div>
@@ -158,11 +146,11 @@ import LanguageDropdown from "./LanguageSwitcher";
                 </p>
 
                 <div className="flex items-center justify-center gap-6  text-center mx-auto w-full">
-                <button className="bg-[#008A4A] hover:bg-[#006d3a] px-8 py-4 rounded-lg font-semibold transition shadow-lg">
+                <button className="bg-[#008346] hover:bg-[#008346] px-8 py-4 rounded-lg font-semibold transition shadow-lg">
                     {slides[currentSlide].button1}
                 </button>
 
-                <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white/10 backdrop-blur transition">
+                <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black backdrop-blur transition">
                     {slides[currentSlide].button2}
                 </button>
                 </div>

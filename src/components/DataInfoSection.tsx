@@ -1,4 +1,5 @@
-
+import { Link } from "react-router";
+import myImg from "../assets/images/third-hero.png"
 import { ArrowRight } from "lucide-react";
 
 export default function DataInfoSection() {
@@ -6,7 +7,7 @@ export default function DataInfoSection() {
     <section className="relative w-full h-[350px] md:h-[420px] lg:h-[460px] py-24 lg:py-32 overflow-hidden">
       {/* Background Image */}
       <img
-        src="https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg"
+        src={myImg}
         alt="library background"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -29,10 +30,12 @@ export default function DataInfoSection() {
             data.
           </p>
 
-          <button className="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-5 py-2 rounded-md flex items-center gap-2 transition">
-            <span>Submit interest</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <Link to={'/contact-us'}>
+            <button className="bg-[#008346] hover:bg-[#008346] text-white text-sm font-medium px-5 py-2 rounded-md flex items-center gap-2 transition">
+              <span>Submit interest</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

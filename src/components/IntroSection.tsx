@@ -1,19 +1,27 @@
-
-import { CheckCircle } from "lucide-react";
+import myImg from "../assets/images/second-hero.jpg"
+import pic1 from "../assets/images/Picture.png"
+import pic2 from "../assets/images/Picture (1).png";
+import pic3 from "../assets/images/Picture (2).png";
+import Leadership from "../assets/icons/Leadership";
+import Organizational from "../assets/icons/Organizational";
+import Innovation from "../assets/icons/Innovation";
 
 export default function IntroSection() {
   const items = [
     {
       title: "Leadership & Personal Mastery",
       text: "We help leaders understand their natural gifts, clarify their vision, and develop the skills required for the work ahead.",
+      icon: <Leadership/>
     },
     {
       title: "Organizational Effectiveness",
       text: "We teach practical frameworks to assess community needs, translate insights into meaningful offerings, and build healthy, resilient organizations that can deliver.",
+      icon: <Organizational/>
     },
     {
       title: "Innovation & Collaboration",
       text: "We equip leaders with design tools that enable them to work creatively with clients, colleagues, and sector partners to imagine and build what's possible.",
+      icon: <Innovation/>
     },
   ];
 
@@ -22,11 +30,11 @@ export default function IntroSection() {
       {/* Background image with green overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/3184397/pexels-photo-3184397.jpeg"
+          src={myImg}
           alt="background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-green-700/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#025D32]/85 to-[#008346]/85" />
       </div>
 
       {/* Content Wrapper */}
@@ -40,10 +48,14 @@ export default function IntroSection() {
           <div className="space-y-8 text-white">
             {items.map((item, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 flex-shrink-0 text-white" />
+                <div className="w-[32.5px] h-[32.5px] bg-white rounded-sm shrink-0 flex items-center justify-center">
+                  {item.icon}
+                </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                  <p className="text-white/90 leading-relaxed">{item.text}</p>
+                  <p className="text-white/60 leading-relaxed font-normal">
+                    {item.text}
+                  </p>
                 </div>
               </div>
             ))}
@@ -51,22 +63,35 @@ export default function IntroSection() {
         </div>
 
         {/* Right Images */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <img
-            src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
-            alt="person1"
-            className="rounded-xl object-cover h-40 w-full md:h-56 lg:h-64"
-          />
-          <img
-            src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg"
-            alt="person2"
-            className="rounded-xl object-cover h-40 w-full md:h-56 lg:h-64"
-          />
-          <img
-            src="https://images.pexels.com/photos/1181687/pexels-photo-1181687.jpeg"
-            alt="person3"
-            className="rounded-xl object-cover h-40 w-full md:h-56 lg:h-64 hidden md:block"
-          />
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
+          {/* Pic 1 */}
+          <div className="flex flex-col mt-20">
+            <img
+              src={pic1}
+              alt="person1"
+              className="rounded-xl object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Pic 2 with extra spacing UNDER it */}
+          <div className="flex flex-col mb-20 max-sm:mb-15">
+            {" "}
+            {/* <-- spacing here */}
+            <img
+              src={pic2}
+              alt="person2"
+              className="rounded-xl object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Pic 3 */}
+          <div className="flex flex-col mt-10">
+            <img
+              src={pic3}
+              alt="person3"
+              className="rounded-xl object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>

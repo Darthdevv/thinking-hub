@@ -1,5 +1,7 @@
-import { Users, Flag, Lightbulb } from "lucide-react";
 import patternImage from "../assets/images/About.png";
+import Mission from "../assets/icons/Mission";
+import Vision from "../assets/icons/Vision";
+import Values from "../assets/icons/Values";
 
 export default function AboutSection() {
   return (
@@ -39,8 +41,8 @@ export default function AboutSection() {
 
           {/* Mission */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
-            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
-              <Users className="w-10 h-10 text-white" />
+            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Mission />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">MISSION</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -51,8 +53,8 @@ export default function AboutSection() {
 
           {/* Vision */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
-            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
-              <Flag className="w-10 h-10 text-white" />
+            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Vision />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">VISION</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -63,8 +65,8 @@ export default function AboutSection() {
 
           {/* Values */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left px-4">
-            <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-xl mb-8">
-              <Lightbulb className="w-10 h-10 text-white" />
+            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+              <Values />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">VALUES</h3>
             <p className="text-gray-600 leading-relaxed">

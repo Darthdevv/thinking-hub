@@ -52,7 +52,7 @@ const OurWayOfWorking = () => {
                 className="w-full h-full bg-white rounded-br-3xl rounded-bl-3xl object-cover transition-transform duration-500 group-hover:scale-105 p-2"
               />
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#17b26ada] rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#17B26Acc] hover:bg-[#17B26A] rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
                   <PlayIcon />
                 </div>
               </div>
