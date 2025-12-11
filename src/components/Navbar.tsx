@@ -87,12 +87,12 @@
                 </div>
                 <LanguageDropdown />
 
-                <a
-                href="/contact-us"
+                <Link
+                to={"/contact-us"}
                 className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition shadow-md"
                 >
                 {t("navbtn")} <Rocket />
-                </a>
+                </Link>
             </div>
             </nav>
 
@@ -138,12 +138,12 @@
                     <LanguageDropdown />
                     </div>
 
-                    <a
-                    href="/contact-us"
+                    <Link
+                    to={"/contact-us"}
                     className=" text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                     >
                     {t("navbtn")} <Rocket />
-                    </a>
+                    </Link>
                 </div>
                 </div>
             </div>

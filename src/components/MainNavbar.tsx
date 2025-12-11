@@ -47,12 +47,12 @@ import { useTranslation } from "react-i18next";
                 <LanguageDropdown/>
 
                 {/* CTA */}
-                <a
-                href="/contact-us"
+                <Link
+                to={"/contact-us"}
                 className="bg-[#008346] hover:bg-[#008346] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition"
                 >
                 {t("navbtn")} <Rocket/>
-                </a>
+                </Link>
             </div>
             </nav>
 
@@ -89,12 +89,12 @@ import { useTranslation } from "react-i18next";
                     <LanguageDropdown/>
                 </div>
 
-                <a
-                    href="/contact-us"
+                <Link
+                    to={"/contact-us"}
                     className="text-center bg-[#008346] hover:bg-[#008346] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
                 >
                     {t("navbtn")} <Rocket/>
-                </a>
+                </Link>
                 </div>
             </div>
             )}
