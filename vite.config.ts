@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://72.62.89.171:8085",
+        target: "https://api.thedth.com",
         changeOrigin: true,
       },
     },

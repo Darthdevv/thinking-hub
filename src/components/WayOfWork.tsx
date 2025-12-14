@@ -1,7 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import PlayIcon from "../assets/icons/PlayIcon";
+import myImg from "../assets/images/how-we-work.jpg"
+// import PlayIcon from "../assets/icons/PlayIcon";
 
 export default function WayOfWorking() {
   const { t, i18n } = useTranslation();
@@ -24,29 +25,29 @@ export default function WayOfWorking() {
             <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
             <span className="w-3 h-3 bg-green-400 rounded-full"></span>
 
-            <div className="mx-auto w-63.5 h-6.5 bg-[#F1F5F9] rounded-[5px] text-gray-400 text-sm flex items-center justify-center">
+            {/* <div className="mx-auto w-63.5 h-6.5 bg-[#F1F5F9] rounded-[5px] text-gray-400 text-sm flex items-center justify-center">
               app.mrgxflow.co
-            </div>
+            </div> */}
           </div>
 
           {/* Main Image */}
           <img
-            src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg"
+            src={myImg}
             alt="team meeting"
             className="w-full h-80 sm:h-56 md:h-64 lg:h-80 object-cover"
           />
 
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-24 h-24 bg-[#17b26acc] rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#17b26a]">
+            {/* <div className="w-24 h-24 bg-[#57B3B9cc] rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#57B3B9]">
               <PlayIcon />
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Right: Content */}
         <div className="text-gray-800 w-full max-w-full max-sm:max-w-[430px]">
-          <p className="text-green-600 font-semibold mb-2">{t("welcome")}</p>
+          <p className="text-[#57B3B9] font-semibold mb-2">{t("welcome")}</p>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">
             {t("description")}
           </h2>
@@ -61,7 +62,7 @@ export default function WayOfWorking() {
               <path
                 opacity="0.8"
                 d="M4.00098 30C73.6316 10.3798 266.915 -17.0885 483.001 30"
-                stroke="#017A41"
+                stroke="#57B3B9"
                 strokeWidth={8}
                 strokeLinecap="round"
               />
@@ -73,7 +74,7 @@ export default function WayOfWorking() {
           </p>
 
           {/* Explore More */}
-          <button className="flex items-center gap-2 text-green-700 font-semibold hover:underline">
+          <button className="flex items-center gap-2 text-[#57B3B9] font-semibold hover:underline">
             {t("btntext")} <ArrowRight className="w-4 h-4" />
           </button>
         </div>

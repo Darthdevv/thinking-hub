@@ -21,7 +21,7 @@ export default function AboutSection() {
         <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-10">
           {/* Left Text */}
           <div className="max-w-7xl">
-            <p className="text-green-600 font-semibold text-lg tracking-widest mb-4">
+            <p className="text-[#57B3B9] font-semibold text-lg tracking-widest mb-4">
               {t("aboutheader")}
             </p>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -50,7 +50,7 @@ export default function AboutSection() {
 
           {/* Mission */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left rtl:lg:text-right px-4">
-            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+            <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Mission />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -61,7 +61,7 @@ export default function AboutSection() {
 
           {/* Vision */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left rtl:lg:text-right px-4">
-            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+            <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Vision />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -72,7 +72,7 @@ export default function AboutSection() {
 
           {/* Values */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left rtl:lg:text-right px-4">
-            <div className="w-13.5 h-13.5 bg-[#008A4A] rounded-full flex items-center justify-center shadow-xl mb-8">
+            <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Values />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">

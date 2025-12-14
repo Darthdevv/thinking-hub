@@ -36,7 +36,7 @@ const ContactFooter: React.FC = () => {
         </div>
 
         {/* Email */}
-        <div className="flex-1 flex flex-col items-start space-y-2">
+        {/* <div className="flex-1 flex flex-col items-start space-y-2">
           <span className="text-xs font-semibold text-gray-600 tracking-widest">
             {t("contactfootersubtitle1")}
           </span>
@@ -49,7 +49,7 @@ const ContactFooter: React.FC = () => {
               {t("example1")}
             </a>
           </div>
-        </div>
+        </div> */}
 
         {/* Phone */}
         <div className="flex-1 flex flex-col items-start space-y-2">
@@ -57,10 +57,16 @@ const ContactFooter: React.FC = () => {
             {t("contactfootersubtitle2")}
           </span>
           <div className="flex flex-col items-start gap-3">
-            <div className="w-6.5 h-1 my-6.5 bg-gray-900" />
+            <div className="w-6 h-1 my-6 bg-gray-900" />
             <a
-              href="tel:+18089834256"
-              className="text-lg font-medium text-gray-900 hover:text-emerald-600 transition-colors duration-200"
+              href={`tel:+1${t("example1")}`}
+              className="text-lg font-medium text-gray-900 hover:text-[#54AAA9] transition-colors duration-200"
+            >
+              {t("example1")}
+            </a>
+            <a
+              href={`tel:+1${t("example2")}`}
+              className="text-lg font-medium text-gray-900 hover:text-[#54AAA9] transition-colors duration-200"
             >
               {t("example2")}
             </a>

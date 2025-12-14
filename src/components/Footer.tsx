@@ -1,11 +1,12 @@
 import { Link } from 'react-router';
 import GreenLogo from '../assets/icons/Footer/GreenLogo';
-import XIcon from '../assets/icons/Footer/X';
-import LinkedInIcon from '../assets/icons/Footer/Linkedin';
-import FacebookIcon from '../assets/icons/Footer/Facebook';
+import myLogo from "../assets/images/footer-logo.png"
+// import XIcon from '../assets/icons/Footer/X';
+// import LinkedInIcon from '../assets/icons/Footer/Linkedin';
+// import FacebookIcon from '../assets/icons/Footer/Facebook';
+// import SnapchatIcon from "../assets/icons/Footer/Snapchat";
 import InstagramIcon from '../assets/icons/Footer/Instgram';
-import SnapchatIcon from '../assets/icons/Footer/Snapchat';
-import SoonBadge from '../assets/icons/Footer/SoonBadge';
+// import SoonBadge from '../assets/icons/Footer/SoonBadge';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 
@@ -41,21 +42,21 @@ const Footer = () => {
     { label: t("designThinkingHubLink3"), to: "/how-we-work" },
   ];
 
-  const programTracksLinks = [
-    { label: t("programTracksLink1"), to: "#", hasBadge: true },
-    { label: t("programTracksLink2"), to: "#", hasBadge: true },
-    { label: t("programTracksLink3"), to: "#", hasBadge: true },
-  ];
+  // const programTracksLinks = [
+  //   { label: t("programTracksLink1"), to: "#", hasBadge: true },
+  //   { label: t("programTracksLink2"), to: "#", hasBadge: true },
+  //   { label: t("programTracksLink3"), to: "#", hasBadge: true },
+  // ];
 
   const socialLinks = [
-    { Icon: XIcon, to: "#" },
-    { Icon: LinkedInIcon, to: "#" },
-    { Icon: FacebookIcon, to: "#" },
+    // { Icon: XIcon, to: "#" },
+    // { Icon: LinkedInIcon, to: "#" },
+    // { Icon: FacebookIcon, to: "#" },
     { Icon: InstagramIcon, to: "#" },
-    { Icon: SnapchatIcon, to: "#" },
+    // { Icon: SnapchatIcon, to: "#" },
   ];
   return (
-    <div className="w-full mt-auto bg-[#0C0E12] border-t-[22px] border-[#008A4A] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
+    <div className="w-full mt-auto bg-[#0C0E12] border-t-[22px] border-[#57B3B9] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
       {/* Top Section */}
       {/* <div className="border-b border-[#22262F] pb-8 md:pb-16">
                 <div className="mb-3 md:mb-4">
@@ -80,35 +81,37 @@ const Footer = () => {
 
       {/* Middle Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
-        {/* Logo and Description */}
-        <div className="flex flex-col gap-4 md:gap-6 max-w-xs">
-          <Link to={"/"} className="flex items-center justify-start">
-            <GreenLogo className="mr-2 rtl:ml-2 rtl:mr-0" />
-            <span className="text-white">{t("logo")}</span>
-          </Link>
-          <h1 className="text-sm sm:text-base font-normal">
-            {t("footerdesc")}
-          </h1>
-        </div>
-
-        {/* Design Thinking Hub Links */}
-        <div className="flex flex-col gap-2 md:gap-3">
-          <h1 className="font-semibold text-xs sm:text-sm">
-            {t("footertitle1")}
-          </h1>
-          {designThinkingHubLinks.map((link, index) => (
-            <Link
-              key={index}
-              className="font-semibold text-sm sm:text-base hover:text-white transition"
-              to={link.to}
-            >
-              {link.label}
+        <div className="flex items-center justify-start gap-6 flex-wrap">
+          {/* Logo and Description */}
+          <div className="flex flex-col gap-6 md:gap-6 max-w-xs">
+            <Link to={"/"} className="flex items-center justify-start">
+              <GreenLogo className="mr-2 rtl:ml-2 rtl:mr-0" />
+              <span className="text-white">{t("logo")}</span>
             </Link>
-          ))}
+            <h1 className="text-sm sm:text-base font-normal">
+              {t("footerdesc")}
+            </h1>
+          </div>
+
+          {/* Design Thinking Hub Links */}
+          <div className="rtl:w-full flex flex-col gap-2 md:gap-3 max-sm:mt-8 mr-auto">
+            <h1 className="font-semibold text-xs sm:text-sm">
+              {t("footertitle1")}
+            </h1>
+            {designThinkingHubLinks.map((link, index) => (
+              <Link
+                key={index}
+                className="font-semibold text-sm sm:text-base hover:text-white transition"
+                to={link.to}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Program Tracks Links */}
-        <div className="flex flex-col gap-2 md:gap-3">
+        {/* <div className="flex flex-col gap-2 md:gap-3">
           <h1 className="font-semibold text-xs sm:text-sm">
             {t("footertitle2")}
           </h1>
@@ -123,6 +126,15 @@ const Footer = () => {
               {link.hasBadge && <SoonBadge />}
             </div>
           ))}
+        </div> */}
+
+        {/* Logo */}
+        <div className="flex justify-start md:justify-center max-sm:mt-8">
+          <img
+            src={myLogo}
+            alt="footer-logo"
+            className="w-32 sm:w-40 md:w-44 lg:w-48 max-w-full h-auto object-contain"
+          />
         </div>
 
         {/* Resources Links */}

@@ -1,21 +1,26 @@
 import myImg from "../assets/images/second-hero.jpg"
-import pic1 from "../assets/images/Picture.png"
-import pic2 from "../assets/images/Picture (1).png";
-import pic3 from "../assets/images/Picture (2).png";
+// import pic1 from "../assets/images/Picture.png"
+// import pic2 from "../assets/images/Picture (1).png";
+// import pic3 from "../assets/images/Picture (2).png";
 import Leadership from "../assets/icons/Leadership";
 import Organizational from "../assets/icons/Organizational";
 import Innovation from "../assets/icons/Innovation";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import heroEn from "../assets/images/intro-logo-en.png";
+import heroAr from "../assets/images/intro-logo-ar.png";
 
 export default function IntroSection() {
     const { t, i18n } = useTranslation();
-  
+    const heroImage = i18n.language === "ar" ? heroAr : heroEn;
+
     useEffect(() => {
       const dir = i18n.language === "ar" ? "rtl" : "ltr";
       document.documentElement.dir = dir;
       document.documentElement.lang = i18n.language;
     }, [i18n.language]);
+
+
 
   const items = [
     {
@@ -44,7 +49,7 @@ export default function IntroSection() {
           alt="background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#025D32]/85 to-[#008346]/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#154B4E]/85 to-[#57B3B9]/85" />
       </div>
 
       {/* Content Wrapper */}
@@ -54,6 +59,10 @@ export default function IntroSection() {
           <h2 className="text-3xl font-semibold text-white mb-8">
             {t("intromaintext")}
           </h2>
+
+          <p className="text-white/60 leading-relaxed font-normal mb-8">
+            {t("intromaindesc")}
+          </p>
 
           <div className="space-y-8 text-white">
             {items.map((item, idx) => (
@@ -73,35 +82,13 @@ export default function IntroSection() {
         </div>
 
         {/* Right Images */}
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
-          {/* Pic 1 */}
-          <div className="flex flex-col mt-20">
-            <img
-              src={pic1}
-              alt="person1"
-              className="rounded-xl object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Pic 2 with extra spacing UNDER it */}
-          <div className="flex flex-col mb-20 max-sm:mb-15">
-            {" "}
-            {/* <-- spacing here */}
-            <img
-              src={pic2}
-              alt="person2"
-              className="rounded-xl object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Pic 3 */}
-          <div className="flex flex-col mt-10">
-            <img
-              src={pic3}
-              alt="person3"
-              className="rounded-xl object-cover w-full h-full"
-            />
-          </div>
+        {/* Right Image (Language-based) */}
+        <div className="flex justify-center lg:justify-end">
+          <img
+            src={heroImage}
+            alt="Intro visual"
+            className="w-[500px] h-[500px] max-sm:w-full max-sm:h-full object-cover"
+          />
         </div>
       </div>
     </section>

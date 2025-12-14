@@ -1,11 +1,12 @@
-import myImg from "../assets/images/Image 1.jpg";
-import iMac from "../assets/images/imac.jpg";
+import myImg from "../assets/images/our-way-work.jpg";
+import iMac from "../assets/images/girl-phone.jpg";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import PlayIcon from "../assets/icons/PlayIcon";
+// import PlayIcon from "../assets/icons/PlayIcon";
 
 const OurWayOfWorking = () => {
   const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   useEffect(() => {
     const dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -23,7 +24,7 @@ const OurWayOfWorking = () => {
 
         {/* Paragraph */}
         <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
-          <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-[#161C2D] font-light leading-relaxed">
             {t("ourdesc")}
           </p>
         </div>
@@ -36,22 +37,23 @@ const OurWayOfWorking = () => {
             <img
               src={myImg}
               alt="Team collaborating"
-              className="w-full h-auto object-cover block"
+              className="w-[1202px] h-[523px] max-sm:w-full max-sm:h-full object-cover block"
             />
           </div>
 
           {/* Video Thumbnail - responsive: centered on small screens, left-hung on md+ */}
           <div
-            className="
-              absolute
-              -bottom-10 md:-bottom-14 lg:-bottom-20
-              left-1/2 transform -translate-x-1/2
-              md:left-8 md:translate-x-0
-              lg:left-12
-              w-72 md:w-96 lg:w-[480px]
-              rounded-3xl overflow-hidden shadow-2xl z-10
-            "
-            style={{ willChange: "transform" }}
+            className={`
+                absolute
+                -bottom-10 md:-bottom-14 lg:-bottom-20
+                ${
+                  isRTL
+                    ? "right-1/2 translate-x-1/2 md:right-8 md:translate-x-0 lg:right-12"
+                    : "left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 lg:left-12"
+                }
+                w-72 md:w-96 lg:w-[480px]
+                rounded-3xl overflow-hidden shadow-2xl z-10
+              `}
           >
             <div className="relative group cursor-pointer">
               {/* Browser bar inside the small card */}
@@ -70,12 +72,12 @@ const OurWayOfWorking = () => {
 
               {/* Overlay play button — perfectly centered inside thumbnail */}
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
-                <button
+                {/* <button
                   aria-label="Play video"
-                  className="pointer-events-auto w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#17B26Acc] hover:bg-[#17B26A] rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110"
+                  className="pointer-events-auto w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#57B3B9cc] hover:bg-[#57B3B9] rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110"
                 >
                   <PlayIcon />
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
