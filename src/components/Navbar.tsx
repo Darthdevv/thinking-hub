@@ -27,12 +27,6 @@
             button1: t("herobtn1"),
             button2: t("herosecondbtn1"),
             },
-            {
-            title: t("herotitle2"),
-            description: t("herodesc2"),
-            button1: t("herobtn2"),
-            button2: t("herosecondbtn2"),
-            },
         ];
 
         useEffect(() => {

@@ -65,6 +65,29 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setEmail("");
     setPhoneNumber("");
     setRole(null);
+
+    const exportResponse = await fetch(`${API_URL}/contacts/export`, {
+      method: "GET",
+      headers: {
+        "Content-Type":
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      },
+    });
+
+    if (!exportResponse.ok) {
+      throw new Error("Failed to export");
+    }
+
+    const blob = await exportResponse.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "contacts.xlsx";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
   } catch {
     setMessageType("error");
     setMessage(t("submiterror"));
@@ -72,6 +95,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setLoading(false);
   }
 };
+
 
 
   return (

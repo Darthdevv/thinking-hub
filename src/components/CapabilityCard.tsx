@@ -39,7 +39,7 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({
 
         {/* Images Side – Horizontal Layout */}
         <div
-          className={`grid grid-cols-2 gap-6 lg:gap-10 -mx-6 lg:mx-0 ${
+          className={`grid grid-cols-2 gap-6 lg:gap-10  lg:mx-0 ${
             reverse ? "lg:order-1" : "lg:order-2"
           } ${hasTwoImages ? "" : "grid-cols-1 lg:grid-cols-1"}`}
         >
