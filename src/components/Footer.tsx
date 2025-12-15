@@ -37,7 +37,7 @@ const Footer = () => {
 
   // Define link arrays for each section
   const designThinkingHubLinks = [
-    { label: t("designThinkingHubLink1"), to: "/how-we-work" },
+    { label: t("designThinkingHubLink1"), to: "/#about-us" },
     { label: t("designThinkingHubLink2"), to: "/contact-us" },
     { label: t("designThinkingHubLink3"), to: "/how-we-work" },
   ];
@@ -52,7 +52,10 @@ const Footer = () => {
     // { Icon: XIcon, to: "#" },
     // { Icon: LinkedInIcon, to: "#" },
     // { Icon: FacebookIcon, to: "#" },
-    { Icon: InstagramIcon, to: "#" },
+    {
+      Icon: InstagramIcon,
+      to: "https://www.instagram.com/design_mafs/?igsh=MWh2ZGg5cWttYm83Ng%3D%3D#",
+    },
     // { Icon: SnapchatIcon, to: "#" },
   ];
   return (

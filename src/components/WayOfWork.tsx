@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import myImg from "../assets/images/how-we-work.jpg"
+import { Link } from "react-router";
 // import PlayIcon from "../assets/icons/PlayIcon";
 
 export default function WayOfWorking() {
@@ -47,7 +48,9 @@ export default function WayOfWorking() {
 
         {/* Right: Content */}
         <div className="text-[#0F172A] w-full max-w-full max-sm:max-w-[430px]">
-          <p className="text-[#57B3B9] text-lg font-semibold mb-2">{t("welcome")}</p>
+          <p className="text-[#57B3B9] text-lg font-semibold mb-2">
+            {t("welcome")}
+          </p>
           <h2 className="text-5xl md:text-4xl text-[#0F172A] font-bold mb-6 leading-snug">
             {t("description")}
           </h2>
@@ -74,9 +77,11 @@ export default function WayOfWorking() {
           </p>
 
           {/* Explore More */}
-          <button className="flex items-center gap-2 text-[#57B3B9] font-semibold hover:underline">
-            {t("btntext")} <ArrowRight className="w-4 h-4" />
-          </button>
+          <Link to={'/how-we-work'}>
+            <button className="flex items-center gap-2 text-[#57B3B9] font-semibold hover:underline">
+              {t("btntext")} <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router";
 import GreenLogo from "../assets/icons/Footer/GreenLogo";
-import LanguageDropdown from "./LanguageSwitcher";
+// import LanguageDropdown from "./LanguageSwitcher";
 import Rocket from "../assets/icons/Rocket";
 import { useTranslation } from "react-i18next";
 
@@ -62,7 +62,7 @@ export default function MainNavbar() {
             </Link>
           </div>
           {/* Language */}
-          <LanguageDropdown />
+          {/* <LanguageDropdown /> */}
 
           {/* CTA */}
           <Link
@@ -124,9 +124,9 @@ export default function MainNavbar() {
               {t("navlink2")}
             </Link>
 
-            <div className="pt-4 border-t border-[#57B3B9]">
+            {/* <div className="pt-4 border-t border-[#57B3B9]">
               <LanguageDropdown />
-            </div>
+            </div> */}
 
             <Link
               to={"/contact-us"}

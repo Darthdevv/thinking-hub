@@ -7,6 +7,7 @@ import contactImage from "../assets/images/Rectangle 47 (2).png";
 import RoleDropdown from "./RoleDropdown";
 import PhoneDropdown from "./PhoneInput";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 const ContactFormSection = () => {
   const { t, i18n } = useTranslation();
@@ -99,7 +100,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
 
   return (
-    <section className="relative bg-white py-16 px-6 max-sm:px-0 md:py-24 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-white py-16 px-6 max-sm:px-0 md:py-24 md:px-12 lg:px-24 sm:overflow-hidden">
       {/* Curved background */}
       <div className="relative max-w-7xl text-start max-md:text-center mx-auto max-sm:pl-2 mb-[88px]">
         <h2 className="text-xl text-black font-normal mb-8">
@@ -114,9 +115,15 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
           {/* <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
             <Facebook />
           </button> */}
-          <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
-            <Instagram />
-          </button>
+          <Link
+            to={
+              "https://www.instagram.com/design_mafs?igsh=MWh2ZGg5cWttYm83Ng=="
+            }
+          >
+            <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+              <Instagram />
+            </button>
+          </Link>
           {/* <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
             <TwitterIcon />
           </button> */}
@@ -227,9 +234,14 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
         {/* <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
           <Facebook />
         </button> */}
-        <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
-          <Instagram />
-        </button>
+        <Link
+          to={"https://www.instagram.com/design_mafs?igsh=MWh2ZGg5cWttYm83Ng=="}
+        >
+          <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+            <Instagram />
+          </button>
+        </Link>
+
         {/* <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
           <TwitterIcon />
         </button> */}

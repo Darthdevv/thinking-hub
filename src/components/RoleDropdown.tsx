@@ -58,7 +58,7 @@ const RoleDropdown: React.FC<RoleDropdownProps> = ({
 
       {/* Options */}
       {open && (
-        <div className="absolute w-full bg-white shadow-lg rounded-lg mt-1 z-10 max-h-60 overflow-auto">
+        <div className="absolute w-full bg-white shadow-lg rounded-lg mt-1 z-20 max-h-60 overflow-auto">
           {options.map((option) => (
             <div
               key={option.value}

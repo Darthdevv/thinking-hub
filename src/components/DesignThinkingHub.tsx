@@ -15,7 +15,10 @@ export default function AboutSection() {
     }, [i18n.language]);
 
   return (
-    <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+    <section
+      id="about-us"
+      className="py-20 lg:py-32 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Header + Pattern Image */}
         <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-10">
@@ -59,7 +62,9 @@ export default function AboutSection() {
             <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("mission")}
             </h3>
-            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("missiondesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">
+              {t("missiondesc")}
+            </p>
           </div>
 
           {/* Vision */}
@@ -70,7 +75,9 @@ export default function AboutSection() {
             <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("vision")}
             </h3>
-            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("visiondesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">
+              {t("visiondesc")}
+            </p>
           </div>
 
           {/* Values */}
@@ -81,7 +88,9 @@ export default function AboutSection() {
             <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("values")}
             </h3>
-            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("valuesdesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">
+              {t("valuesdesc")}
+            </p>
           </div>
         </div>
       </div>

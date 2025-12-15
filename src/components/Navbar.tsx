@@ -5,7 +5,7 @@
     import videoSrc from "../assets/videos/Navbar/esign.mp4";
     import { Link } from "react-router";
     import GreenLogo from "../assets/icons/Footer/GreenLogo";
-    import LanguageDropdown from "./LanguageSwitcher";
+    // import LanguageDropdown from "./LanguageSwitcher";
     import Rocket from "../assets/icons/Rocket";
     import { useTranslation } from "react-i18next";
 
@@ -91,7 +91,7 @@
                     {t("navlink2")}
                   </Link>
                 </div>
-                <LanguageDropdown />
+                {/* <LanguageDropdown /> */}
 
                 <Link
                   to={"/contact-us"}
@@ -155,9 +155,9 @@
                       {t("navlink2")}
                     </Link>
 
-                    <div className="py-4 border-t border-[#57B3B9]">
+                    {/* <div className="py-4 border-t border-[#57B3B9]">
                       <LanguageDropdown />
-                    </div>
+                    </div> */}
 
                     <Link
                       to={"/contact-us"}
@@ -184,14 +184,16 @@
 
                 <div className="flex items-center justify-center gap-6  text-center mx-auto w-full">
                   <Link to={"/contact-us"}>
-                    <button className="bg-[#57B3B9] hover:bg-[#54AAA9] px-8 py-4 rounded-lg font-semibold transition shadow-lg text-base flex items-center justify-center gap-2 cursor-pointer">
-                      <Rocket />
+                    <button className="bg-[#57B3B9] hover:bg-[#54AAA9] px-8 py-4 rounded-lg font-semibold transition shadow-lg text-base flex items-center justify-center gap-2 cursor-pointer text-nowrap">
+                      <span className="hidden md:inline-flex">
+                        <Rocket />
+                      </span>
                       {slides[currentSlide].button1}
                     </button>
                   </Link>
 
                   <Link to={"/how-we-work"}>
-                    <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black text-base backdrop-blur transition cursor-pointer">
+                    <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black text-base backdrop-blur transition cursor-pointer text-nowrap">
                       {slides[currentSlide].button2}
                     </button>
                   </Link>
