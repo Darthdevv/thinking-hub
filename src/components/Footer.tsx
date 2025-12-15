@@ -1,87 +1,45 @@
-import { Link } from 'react-router';
-import GreenLogo from '../assets/icons/Footer/GreenLogo';
-import myLogo from "../assets/images/footer-logo.png"
-// import XIcon from '../assets/icons/Footer/X';
-// import LinkedInIcon from '../assets/icons/Footer/Linkedin';
-// import FacebookIcon from '../assets/icons/Footer/Facebook';
-// import SnapchatIcon from "../assets/icons/Footer/Snapchat";
-import InstagramIcon from '../assets/icons/Footer/Instgram';
-// import SoonBadge from '../assets/icons/Footer/SoonBadge';
-import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
-
-// const resourcesLinks = [
-//     { label: 'Blog', to: '#' },
-//     { label: 'Newsletter', to: '#' },
-//     { label: 'Help centre', to: '#' },
-//     { label: 'Support', to: '#' },
-// ];
-
-// const legalLinks = [
-//     { label: 'Terms', to: '#' },
-//     { label: 'Privacy', to: '#' },
-//     { label: 'Cookies', to: '#' },
-//     { label: 'Licenses', to: '#' },
-// ];
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { HashLink as Link } from "react-router-hash-link";
+import GreenLogo from "../assets/icons/Footer/GreenLogo";
+import myLogo from "../assets/images/footer-logo.png";
+import InstagramIcon from "../assets/icons/Footer/Instgram";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 
 const Footer = () => {
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-    useEffect(() => {
-      const dir = i18n.language === "ar" ? "rtl" : "ltr";
-      document.documentElement.dir = dir;
-      document.documentElement.lang = i18n.language;
-    }, [i18n.language]);
+  useEffect(() => {
+    const dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
-  // Define link arrays for each section
+  // Function to scroll with offset (for fixed headers)
+const scrollWithOffset = (el: HTMLElement) => {
+  if (!el) return;
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -40;
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+};
+
+
   const designThinkingHubLinks = [
     { label: t("designThinkingHubLink1"), to: "/#about-us" },
     { label: t("designThinkingHubLink2"), to: "/contact-us" },
     { label: t("designThinkingHubLink3"), to: "/how-we-work" },
   ];
 
-  // const programTracksLinks = [
-  //   { label: t("programTracksLink1"), to: "#", hasBadge: true },
-  //   { label: t("programTracksLink2"), to: "#", hasBadge: true },
-  //   { label: t("programTracksLink3"), to: "#", hasBadge: true },
-  // ];
-
   const socialLinks = [
-    // { Icon: XIcon, to: "#" },
-    // { Icon: LinkedInIcon, to: "#" },
-    // { Icon: FacebookIcon, to: "#" },
     {
       Icon: InstagramIcon,
       to: "https://www.instagram.com/design_mafs/?igsh=MWh2ZGg5cWttYm83Ng%3D%3D#",
     },
-    // { Icon: SnapchatIcon, to: "#" },
   ];
+
   return (
     <div className="w-full mt-auto bg-[#0C0E12] border-t-[22px] border-[#57B3B9] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
-      {/* Top Section */}
-      {/* <div className="border-b border-[#22262F] pb-8 md:pb-16">
-                <div className="mb-3 md:mb-4">
-                    <h1 className="font-semibold text-xl sm:text-2xl md:text-3xl text-white">
-                        Ready to Build Your Impact?
-                    </h1>
-                </div>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                    <h2 className="text-sm sm:text-base font-normal text-white max-w-md">
-                        Join a track, explore a course, or connect with our team — your journey starts now.
-                    </h2>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                        <button className="border border-[#373A41] w-full sm:w-36 bg-[#0C0E12] h-12 rounded-lg text-white text-sm sm:text-base font-semibold hover:bg-[#1A1C22] transition">
-                            Browse Courses
-                        </button>
-                        <button className="w-full sm:w-36 bg-[#008A4A] h-12 rounded-lg text-white text-sm sm:text-base font-semibold hover:bg-[#006C3A] transition">
-                            Join a Program
-                        </button>
-                    </div>
-                </div>
-            </div> */}
-
       {/* Middle Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
         <div className="flex flex-col md:flex-row items-start gap-6 w-full">
@@ -101,6 +59,7 @@ const Footer = () => {
               <Link
                 key={index}
                 to={link.to}
+                scroll={(el: any) => scrollWithOffset(el)} // handle smooth manually
                 className="font-semibold text-base hover:text-white transition"
               >
                 {link.label}
@@ -127,13 +86,15 @@ const Footer = () => {
         </h1>
         <div className="flex gap-4 md:gap-6">
           {socialLinks.map((link, index) => (
-            <Link
+            <a
               key={index}
-              to={link.to}
+              href={link.to}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition"
             >
               <link.Icon />
-            </Link>
+            </a>
           ))}
         </div>
       </div>
