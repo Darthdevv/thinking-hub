@@ -81,28 +81,24 @@ const Footer = () => {
 
       {/* Middle Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
-        <div className="flex items-center justify-start gap-6 flex-wrap">
-          {/* Logo and Description */}
-          <div className="flex flex-col gap-6 md:gap-6 max-w-xs">
-            <Link to={"/"} className="flex items-center justify-start">
-              <GreenLogo className="mr-2 rtl:ml-2 rtl:mr-0" />
-              <span className="text-white">{t("logo")}</span>
+        <div className="flex flex-col md:flex-row items-start gap-6 w-full">
+          {/* Logo + Description */}
+          <div className="flex flex-col gap-6 max-w-xs w-full">
+            <Link to="/" className="flex items-center">
+              <GreenLogo className="mr-2" />
+              <span className="text-white text-bold">{t("logo")}</span>
             </Link>
-            <h1 className="text-sm sm:text-base font-normal">
-              {t("footerdesc")}
-            </h1>
+            <p className="text-base font-normal">{t("footerdesc")}</p>
           </div>
 
-          {/* Design Thinking Hub Links */}
-          <div className="rtl:w-full flex flex-col gap-2 md:gap-3 max-sm:mt-8 mr-auto">
-            <h1 className="font-semibold text-xs sm:text-sm">
-              {t("footertitle1")}
-            </h1>
+          {/* Links */}
+          <div className="flex flex-col gap-2 md:gap-3 max-sm:mt-8 w-full">
+            <h1 className="font-semibold text-sm">{t("footertitle1")}</h1>
             {designThinkingHubLinks.map((link, index) => (
               <Link
                 key={index}
-                className="font-semibold text-sm sm:text-base hover:text-white transition"
                 to={link.to}
+                className="font-semibold text-base hover:text-white transition"
               >
                 {link.label}
               </Link>
@@ -110,57 +106,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Program Tracks Links */}
-        {/* <div className="flex flex-col gap-2 md:gap-3">
-          <h1 className="font-semibold text-xs sm:text-sm">
-            {t("footertitle2")}
-          </h1>
-          {programTracksLinks.map((link, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <Link
-                className="font-semibold text-sm sm:text-base hover:text-white transition"
-                to={link.to}
-              >
-                {link.label}
-              </Link>
-              {link.hasBadge && <SoonBadge />}
-            </div>
-          ))}
-        </div> */}
-
-        {/* Logo */}
-        <div className="flex justify-start md:justify-center max-sm:mt-8">
+        {/* Footer Logo */}
+        <div className="flex justify-start md:justify-center max-sm:mt-8 w-full">
           <img
             src={myLogo}
             alt="footer-logo"
-            className="w-32 sm:w-40 md:w-44 lg:w-48 max-w-full h-auto object-contain"
+            className="w-32 sm:w-40 md:w-44 lg:w-48 object-contain"
           />
         </div>
-
-        {/* Resources Links */}
-        {/* <div className="flex flex-col gap-2 md:gap-3">
-                    <h1 className="font-semibold text-xs sm:text-sm">Resources</h1>
-                    {resourcesLinks.map((link, index) => (
-                        <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </div> */}
-
-        {/* Legal Links */}
-        {/* <div className="flex flex-col gap-2 md:gap-3">
-                    <h1 className="font-semibold text-xs sm:text-sm">Legal</h1>
-                    {legalLinks.map((link, index) => (
-                        <Link key={index} className="font-semibold text-sm sm:text-base hover:text-white transition" to={link.to}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </div> */}
       </div>
 
       {/* Bottom Section */}
       <div className=" max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between mt-8 gap-4 text-[#94979C]">
-        <h1 className="font-normal text-sm sm:text-base">
+        <h1 className="font-normal text-base">
           © {new Date().getFullYear()}
           {t("copyrights")}
         </h1>

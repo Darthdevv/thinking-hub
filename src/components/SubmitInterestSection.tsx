@@ -66,28 +66,28 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setPhoneNumber("");
     setRole(null);
 
-    const exportResponse = await fetch(`${API_URL}/contacts/export`, {
-      method: "GET",
-      headers: {
-        "Content-Type":
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      },
-    });
+    // const exportResponse = await fetch(`${API_URL}/contacts/export`, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type":
+    //       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    //   },
+    // });
 
-    if (!exportResponse.ok) {
-      throw new Error("Failed to export");
-    }
+    // if (!exportResponse.ok) {
+    //   throw new Error("Failed to export");
+    // }
 
-    const blob = await exportResponse.blob();
-    const url = window.URL.createObjectURL(blob);
+    // const blob = await exportResponse.blob();
+    // const url = window.URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "contacts.xlsx";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    window.URL.revokeObjectURL(url);
+    // const a = document.createElement("a");
+    // a.href = url;
+    // a.download = "contacts.xlsx";
+    // document.body.appendChild(a);
+    // a.click();
+    // a.remove();
+    // window.URL.revokeObjectURL(url);
   } catch {
     setMessageType("error");
     setMessage(t("submiterror"));
@@ -102,7 +102,9 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     <section className="relative bg-white py-16 px-6 max-sm:px-0 md:py-24 md:px-12 lg:px-24 overflow-hidden">
       {/* Curved background */}
       <div className="relative max-w-7xl text-start max-md:text-center mx-auto max-sm:pl-2 mb-[88px]">
-        <h2 className="text-xl text-black mb-8">{t("contactustitle")}</h2>
+        <h2 className="text-xl text-black font-normal mb-8">
+          {t("contactustitle")}
+        </h2>
         <p className="text-5xl font-bold text-black w-[659px] max-sm:w-full">
           {t("contactusdesc")}
         </p>
@@ -126,10 +128,10 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
         {/* Form */}
         <div className="bg-[#0F8087] rounded-none p-8 md:p-12 flex-1 w-[541px] max-sm:w-[360px] max-sm:px-10 max-sm:h-[504px] h-[564px] shadow-lg ml-10 rtl:ml-0 max-sm:rtl:ml-10 rtl:mr-10 max-sm:ml-0 mt-10">
-          <h2 className="text-white text-lg font-medium mb-2.5">
+          <h2 className="text-white text-2xl font-semibold mb-2.5">
             {t("contactustitle")}
           </h2>
-          <p className="text-white mb-4">{t("formdesc")}</p>
+          <p className="text-white text-sm font-normal mb-4">{t("formdesc")}</p>
 
           {message && (
             <div
@@ -143,7 +145,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
           <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
             {/* Full Name */}
-            <label className="text-white text-sm font-medium">
+            <label className="text-white text-xs font-normal">
               {t("fullname")}
               <span className="text-[#FF3C00]">*</span>
             </label>
@@ -156,7 +158,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
             />
 
             {/* Email */}
-            <label className="text-white text-sm font-medium">
+            <label className="text-white text-xs font-normal">
               {t("email")} <span className="text-[#FF3C00]">*</span>
             </label>
             <input
@@ -168,7 +170,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
             />
 
             {/* Phone */}
-            <label className="text-white text-sm font-medium">
+            <label className="text-white text-xs font-normal">
               {t("phone")}
             </label>
             <div className="flex gap-2">
@@ -179,14 +181,15 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
               <input
                 type="tel"
                 placeholder={t("placeholdernumber")}
-                className="p-2 rounded-md w-full focus:outline-none bg-white focus:ring-2 focus:ring-[#00eeff]"
+                className="p-2 rounded-md w-full focus:outline-none bg-white focus:ring-2 focus:ring-[#00eeff] text-left rtl:text-right"
+                dir="ltr"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
 
             {/* Role */}
-            <label className="text-white text-sm font-medium">
+            <label className="text-white text-xs font-normal">
               {t("role")} <span className="text-[#FF3C00]">*</span>
             </label>
             <RoleDropdown
@@ -199,10 +202,10 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
             <button
               type="submit"
               disabled={loading}
-              className="w-[116px] mt-2 bg-[#57B3B9] hover:bg-[#54AAA9] text-white py-3 px-6 rounded-full flex items-end self-end justify-end gap-2 transition-all disabled:opacity-50"
+              className="w-[116px] mt-2 bg-[#57B3B9] hover:bg-[#54AAA9] text-white py-3 px-6 rounded-full flex items-end self-end justify-end gap-2 transition-all disabled:opacity-50 font-semibold text-base"
             >
-              {loading ? t("sending") : t("formbtn")}
               <Rocket />
+              {loading ? t("sending") : t("formbtn")}
             </button>
           </form>
         </div>

@@ -44,18 +44,18 @@ const GoalCallToAction = () => {
 
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+              <h2 className="text-4xl font-semibold text-white leading-normal mb-8">
                 {t("ctatitle")}
               </h2>
 
-              <p className="text-lg md:text-xl lg:text-2xl text-emerald-50 leading-relaxed w-full  mb-12">
+              <p className="text-base text-white font-normal leading-relaxed w-full  mb-12">
                 {t("ctadesc")}
               </p>
 
               <Link to={"/contact-us"}>
-                <button className="group inline-flex items-center gap-4 bg-white text-[#323338] font-bold text-lg lg:text-xl px-10 py-6 rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
+                <button className="group inline-flex items-center gap-4 bg-white text-[#323338] font-normal text-base px-10 py-6 rounded-full hover:-translate-y-1 transition-all duration-300">
                   {t("ctabtn")}
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform duration-300" />
+                  <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-3 transition-transform duration-300" />
                 </button>
               </Link>
             </div>

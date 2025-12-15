@@ -18,13 +18,13 @@ const OurWayOfWorking = () => {
     <section className="py-12 md:py-20 lg:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-8 md:mb-12 tracking-tight">
+        <h2 className="text-5xl md:text-4xl lg:text-5xl font-bold text-center text-[#161C2D] mb-8 md:mb-12 tracking-normal">
           {t("ourwayofworking")}
         </h2>
 
         {/* Paragraph */}
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
-          <p className="text-base md:text-lg lg:text-xl text-[#161C2D] font-light leading-relaxed">
+        <div className="max-w-7xl mx-auto text-center mb-16 md:mb-24">
+          <p className=" text-[18px] text-[#161C2D]/70 font-normal leading-relaxed">
             {t("ourdesc")}
           </p>
         </div>
@@ -33,7 +33,7 @@ const OurWayOfWorking = () => {
         {/* NOTE: added bottom padding (pb-*) so overlapping thumbnail doesn't cover image content */}
         <div className="relative mx-auto max-w-6xl pb-20 md:pb-28 lg:pb-32">
           {/* Main Large Image - 4 people standing */}
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
+          <div className="rounded-3xl overflow-hidden shadow-xl">
             <img
               src={myImg}
               alt="Team collaborating"
@@ -52,7 +52,7 @@ const OurWayOfWorking = () => {
                     : "left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 lg:left-12"
                 }
                 w-72 md:w-96 lg:w-[480px]
-                rounded-3xl overflow-hidden shadow-2xl z-10
+                rounded-3xl overflow-hidden shadow-xl z-10
               `}
           >
             <div className="relative group cursor-pointer">

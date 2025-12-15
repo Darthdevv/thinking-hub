@@ -46,9 +46,9 @@ export default function WayOfWorking() {
         </div>
 
         {/* Right: Content */}
-        <div className="text-gray-800 w-full max-w-full max-sm:max-w-[430px]">
-          <p className="text-[#57B3B9] font-semibold mb-2">{t("welcome")}</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">
+        <div className="text-[#0F172A] w-full max-w-full max-sm:max-w-[430px]">
+          <p className="text-[#57B3B9] text-lg font-semibold mb-2">{t("welcome")}</p>
+          <h2 className="text-5xl md:text-4xl text-[#0F172A] font-bold mb-6 leading-snug">
             {t("description")}
           </h2>
 
@@ -69,7 +69,7 @@ export default function WayOfWorking() {
             </svg>
           </div>
 
-          <p className="text-gray-600 leading-relaxed mb-6">
+          <p className="text-[#0F172A] text-base font-normal leading-relaxed mb-8">
             {t("subdescription")}
           </p>
 

@@ -24,11 +24,14 @@ export default function AboutSection() {
             <p className="text-[#57B3B9] font-semibold text-lg tracking-widest mb-4">
               {t("aboutheader")}
             </p>
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-bold text-[#12141D] leading-tight">
               {t("abouttitle")}
             </h2>
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-              {t("aboutdesc")}
+            <p className="mt-6 text-base text-[#12141D] font-normal leading-relaxed">
+              {t("aboutdesc1")}
+            </p>
+            <p className="mt-6 text-base text-[#12141D] font-normal leading-relaxed">
+              {t("aboutdesc2")}
             </p>
           </div>
 
@@ -53,10 +56,10 @@ export default function AboutSection() {
             <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Mission />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("mission")}
             </h3>
-            <p className="text-gray-600 leading-relaxed">{t("missiondesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("missiondesc")}</p>
           </div>
 
           {/* Vision */}
@@ -64,10 +67,10 @@ export default function AboutSection() {
             <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Vision />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("vision")}
             </h3>
-            <p className="text-gray-600 leading-relaxed">{t("visiondesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("visiondesc")}</p>
           </div>
 
           {/* Values */}
@@ -75,10 +78,10 @@ export default function AboutSection() {
             <div className="w-13.5 h-13.5 bg-[#57B3B9] rounded-full flex items-center justify-center mb-8">
               <Values />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-lg font-semibold text-[#12141D] mb-4">
               {t("values")}
             </h3>
-            <p className="text-gray-600 leading-relaxed">{t("valuesdesc")}</p>
+            <p className="text-[#12141D] text-base font-normal leading-relaxed">{t("valuesdesc")}</p>
           </div>
         </div>
       </div>

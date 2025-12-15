@@ -56,15 +56,15 @@ export default function IntroSection() {
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Text Section */}
         <div>
-          <h2 className="text-3xl font-semibold text-white mb-8">
+          <h2 className="text-5xl font-bold text-white mb-4">
             {t("intromaintext")}
           </h2>
 
-          <p className="text-white/60 leading-relaxed font-normal mb-8">
+          <p className="text-white/70 leading-relaxed text-sm font-normal mb-10">
             {t("intromaindesc")}
           </p>
 
-          <div className="space-y-8 text-white">
+          <div className="space-y-10 text-white">
             {items.map((item, idx) => (
               <div key={idx} className="flex items-start gap-4">
                 <div className="w-[32.5px] h-[32.5px] bg-white rounded-sm shrink-0 flex items-center justify-center">
@@ -72,7 +72,7 @@ export default function IntroSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                  <p className="text-white/60 leading-relaxed font-normal">
+                  <p className="text-white/70 leading-relaxed text-lg font-normal">
                     {item.text}
                   </p>
                 </div>

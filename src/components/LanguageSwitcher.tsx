@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import ksa from "../assets/images/ksaa.png";
+// import ksa from "../assets/images/ksaa.png";
 import usa from "../assets/images/usa.png";
 
 export default function LanguageDropdown() {
@@ -21,11 +21,11 @@ export default function LanguageDropdown() {
       label: "English",
       flag: usa,
     },
-    {
-      code: "ar",
-      label: "العربية",
-      flag: ksa,
-    },
+    // {
+    //   code: "ar",
+    //   label: "العربية",
+    //   flag: ksa,
+    // },
   ];
 
   const active = languages.find((l) => l.code === i18n.language);
@@ -35,14 +35,14 @@ export default function LanguageDropdown() {
       {/* Trigger button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 text-sm  hover:border-b-2 hover:border-[#57B3B9] transition"
+        className="flex items-center gap-2 text-base font-normal  hover:border-b-2 hover:border-[#57B3B9] transition"
       >
         <img
           src={active?.flag}
           className="w-4.5 h-4.5 rounded-full object-cover"
           alt=""
         />
-        <span>{active?.code === "en" ? "English" : "العربية"}</span>
+        <span>{active?.code === "en" ? "Eng" : "Ar"}</span>
         <ChevronDown className="w-4 h-4" />
       </button>
 

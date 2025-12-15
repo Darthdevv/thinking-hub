@@ -29,10 +29,10 @@ const CapabilityCard: React.FC<CapabilityCardProps> = ({
             reverse ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <h3 className="text-4xl font-semibold text-[#323338] leading-tight">
             {title}
           </h3>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-base text-[#323338] font-normal leading-relaxed">
             {description}
           </p>
         </div>

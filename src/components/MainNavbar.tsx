@@ -27,7 +27,7 @@ export default function MainNavbar() {
           <div className=" p-2.5 rounded-lg">
             <Link to={"/"} className="flex items-center justify-center">
               <GreenLogo className="mr-2 rtl:ml-2" />
-              {t("logo")}
+              <span className="text-white font-bold">{t("logo")}</span>
             </Link>
           </div>
         </div>
@@ -38,13 +38,25 @@ export default function MainNavbar() {
           <div className="flex items-center gap-8 text-sm">
             <Link
               to={"/how-we-work"}
-              className="hover:border-b-2 hover:border-[#57B3B9] transition"
+              className="
+    font-normal text-base text-current
+    border-b-2 border-transparent
+    transition-all duration-300 ease-in-out
+    hover:border-[#57B3B9]
+    hover:scale-105
+  "
             >
               {t("navlink1")}
             </Link>
             <Link
               to={"/contact-us"}
-              className="hover:border-b-2 hover:border-[#57B3B9] transition"
+              className="
+    font-normal text-base text-current
+    border-b-2 border-transparent
+    transition-all duration-300 ease-in-out
+    hover:border-[#57B3B9]
+    hover:scale-105
+  "
             >
               {t("navlink2")}
             </Link>
@@ -57,7 +69,8 @@ export default function MainNavbar() {
             to={"/contact-us"}
             className="bg-[#57B3B9] hover:bg-[#54AAA9] text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 transition"
           >
-            {t("navbtn")} <Rocket />
+            <Rocket />
+            {t("navbtn")}
           </Link>
         </div>
       </nav>
@@ -69,7 +82,7 @@ export default function MainNavbar() {
           <div className=" p-2 rounded-lg">
             <Link to={"/"} className="flex items-center justify-center">
               <GreenLogo className="mr-2 rtl:ml-2" />
-              {t("logo")}
+              <span className="text-white font-bold">{t("logo")}</span>
             </Link>
           </div>
         </div>
@@ -86,13 +99,27 @@ export default function MainNavbar() {
           <div className="px-6 py-6 space-y-6">
             <Link
               to={"/how-we-work"}
-              className="block text-lg hover:border-b-2 hover:border-[#57B3B9] transition"
+              className="
+              block
+    font-normal text-base text-current
+    border-b-2 border-transparent
+    transition-all duration-300 ease-in-out
+    hover:border-[#57B3B9]
+    hover:scale-105
+  "
             >
               {t("navlink1")}
             </Link>
             <Link
               to={"/contact-us"}
-              className="block text-lg hover:border-b-2 hover:border-[#57B3B9] transition"
+              className="
+              block
+    font-normal text-base text-current
+    border-b-2 border-transparent
+    transition-all duration-300 ease-in-out
+    hover:border-[#57B3B9]
+    hover:scale-105
+  "
             >
               {t("navlink2")}
             </Link>
@@ -105,7 +132,8 @@ export default function MainNavbar() {
               to={"/contact-us"}
               className="text-center bg-[#57B3B9] hover:bg-[#54AAA9] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
             >
-              {t("navbtn")} <Rocket />
+              <Rocket />
+              {t("navbtn")}
             </Link>
           </div>
         </div>
