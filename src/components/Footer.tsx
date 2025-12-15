@@ -42,7 +42,7 @@ const scrollWithOffset = (el: HTMLElement) => {
     <div className="w-full mt-auto bg-[#0C0E12] border-t-[22px] border-[#57B3B9] px-4 sm:px-8 md:px-12 lg:px-[7.5rem] py-8 min-h-[24rem]">
       {/* Middle Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12 text-[#94979C] border-b border-[#22262F] mt-8 md:mt-16 pb-8 md:pb-16">
-        <div className="flex flex-col md:flex-row items-start gap-6 w-full">
+        <div className="flex flex-col md:flex-row items-start gap-16 w-full">
           {/* Logo + Description */}
           <div className="flex flex-col gap-6 max-w-xs w-full">
             <Link to="/" className="flex items-center">
