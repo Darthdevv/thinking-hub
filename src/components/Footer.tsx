@@ -20,7 +20,7 @@ const Footer = () => {
 const scrollWithOffset = (el: HTMLElement) => {
   if (!el) return;
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-  const yOffset = -40;
+  const yOffset = -80;
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
 };
 
@@ -59,7 +59,7 @@ const scrollWithOffset = (el: HTMLElement) => {
               <Link
                 key={index}
                 to={link.to}
-                scroll={(el: any) => scrollWithOffset(el)} // handle smooth manually
+                scroll={scrollWithOffset}
                 className="font-semibold text-base hover:text-white transition"
               >
                 {link.label}

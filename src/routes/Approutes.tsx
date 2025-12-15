@@ -11,13 +11,15 @@ import ForgetPassword from "../pages/forgetPassword";
 import MeetOurExpertsPage from "../pages/MeetOurExpertsPage";
 import HowWeWork from "../pages/HowWeWork";
 import ContactUs from "../pages/ContactUs";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
     return (
-        <BrowserRouter>
-            <RouteHandler />
-        </BrowserRouter>
-    )
+      <BrowserRouter>
+        <ScrollToTop />
+        <RouteHandler />
+      </BrowserRouter>
+    );
 }
 
 const RouteHandler = () => {
@@ -25,23 +27,25 @@ const RouteHandler = () => {
     const { pathname } = useLocation();
 
     return (
-        <>
-            {!excludeAuthPaths.includes(pathname) && pathname === "/" && <Navbar />}
-            {pathname !== "/" && !excludeAuthPaths.includes(pathname) && <MainNavbar />}
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/availableCourses" element={<AvailableCourses />} />
-                <Route path="/successStories" element={<SuccessStories />} />
-                <Route path="/forgetPassword" element={<ForgetPassword />} />
-                <Route path="/meet" element={<MeetOurExpertsPage />} />
-                <Route path="/how-we-work" element={<HowWeWork />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-            </Routes>
-            {!excludeAuthPaths.includes(pathname) && <Footer />}
-        </>
-    )
+      <>
+        {!excludeAuthPaths.includes(pathname) && pathname === "/" && <Navbar />}
+        {pathname !== "/" && !excludeAuthPaths.includes(pathname) && (
+          <MainNavbar />
+        )}
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/availableCourses" element={<AvailableCourses />} />
+          <Route path="/successStories" element={<SuccessStories />} />
+          <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path="/meet" element={<MeetOurExpertsPage />} />
+          <Route path="/how-we-work" element={<HowWeWork />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
+        {!excludeAuthPaths.includes(pathname) && <Footer />}
+      </>
+    );
 }
 
 export default AppRoutes;
