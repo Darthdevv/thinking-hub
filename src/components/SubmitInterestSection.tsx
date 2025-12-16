@@ -44,13 +44,19 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     role,
   };
 
+  // map app language → Accept-Language
+  const acceptLanguage = i18n.language === "ar" ? "ar-SA" : "en-US";
+
   try {
     setLoading(true);
     setMessage("");
 
     const response = await fetch(`${API_URL}/contacts`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Accept-Language": acceptLanguage,
+      },
       body: JSON.stringify(formData),
     });
 
@@ -61,34 +67,10 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setMessageType("success");
     setMessage(t("submitsuccess"));
 
-    // clear form
     setFullName("");
     setEmail("");
     setPhoneNumber("");
     setRole(null);
-
-    // const exportResponse = await fetch(`${API_URL}/contacts/export`, {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type":
-    //       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    //   },
-    // });
-
-    // if (!exportResponse.ok) {
-    //   throw new Error("Failed to export");
-    // }
-
-    // const blob = await exportResponse.blob();
-    // const url = window.URL.createObjectURL(blob);
-
-    // const a = document.createElement("a");
-    // a.href = url;
-    // a.download = "contacts.xlsx";
-    // document.body.appendChild(a);
-    // a.click();
-    // a.remove();
-    // window.URL.revokeObjectURL(url);
   } catch {
     setMessageType("error");
     setMessage(t("submiterror"));
@@ -96,6 +78,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     setLoading(false);
   }
 };
+
 
 
 
