@@ -54,7 +54,7 @@
             </div>
 
             {/* DESKTOP NAVBAR */}
-            <nav className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 z-50 items-center justify-between bg-[#000201CC] backdrop-blur-md px-10 py-5 rounded-full shadow-2xl w-full max-w-6xl">
+            <nav className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 z-50 items-center justify-between bg-[#000201CC] backdrop-blur-md px-8 py-5 rounded-full shadow-2xl w-full max-w-7xl">
               <div className="flex items-center gap-4">
                 <div className=" p-2.5 rounded-lg">
                   <Link to={"/"} className="flex items-center justify-center">
@@ -184,7 +184,7 @@
 
                 <div className="flex items-center justify-center gap-6  text-center mx-auto w-full">
                   <Link to={"/contact-us"}>
-                    <button className="bg-[#57B3B9] hover:bg-[#54AAA9] px-8 py-4 rounded-lg font-semibold transition shadow-lg text-base flex items-center justify-center gap-2 cursor-pointer text-nowrap">
+                    <button className="bg-[#57B3B9] hover:bg-[#54AAA9] px-6 py-3 max-sm:py-2.5 max-sm:px-4 rounded-lg font-semibold transition shadow-lg text-base flex items-center justify-center gap-2 cursor-pointer text-nowrap">
                       <span className="hidden md:inline-flex">
                         <Rocket />
                       </span>
@@ -193,7 +193,7 @@
                   </Link>
 
                   <Link to={"/how-we-work"}>
-                    <button className="border border-gray-300 hover:border-white px-8 py-4 rounded-lg font-semibold bg-white text-black text-base backdrop-blur transition cursor-pointer text-nowrap">
+                    <button className="border border-gray-300 hover:border-white px-6 py-3 max-sm:py-2.5 max-sm:px-4 rounded-lg font-semibold bg-white text-black text-base backdrop-blur transition cursor-pointer text-nowrap">
                       {slides[currentSlide].button2}
                     </button>
                   </Link>

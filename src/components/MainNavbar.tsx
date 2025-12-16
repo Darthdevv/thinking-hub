@@ -9,7 +9,7 @@ import Rocket from "../assets/icons/Rocket";
 import { useTranslation } from "react-i18next";
 
 export default function MainNavbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -75,11 +75,10 @@ export default function MainNavbar() {
         </div>
       </nav>
 
-      {/* ====================== MOBILE – EXACTLY LIKE YOUR LAST IMAGE ====================== */}
-      <nav className="md:hidden bg-[#000201CC] text-white flex items-center justify-between px-5 py-4">
-        {/* Logo + Text */}
+      {/* ====================== MOBILE – FIXED NAVBAR ====================== */}
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-[#000201CC]">
         <div className="flex items-center gap-3">
-          <div className=" p-2 rounded-lg">
+          <div className="p-2 rounded-lg">
             <Link to={"/"} className="flex items-center justify-center">
               <GreenLogo className="mr-2 rtl:ml-2" />
               <span className="text-white font-bold">{t("logo")}</span>
@@ -87,57 +86,61 @@ export default function MainNavbar() {
           </div>
         </div>
 
-        {/* Hamburger */}
-        <button onClick={() => setIsOpen(!isOpen)} className="p-1">
-          {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? (
+            <X className="w-7 h-7" />
+          ) : (
+            <Menu className="w-7 h-7" />
+          )}
         </button>
       </nav>
 
-      {/* Mobile Menu Dropdown (appears below the bar) */}
-      {isOpen && (
-        <div className="md:hidden bg-[#000201CC] text-white border-t border-[#57B3B9]">
-          <div className="px-6 py-6 space-y-6">
-            <Link
-              to={"/how-we-work"}
-              className="
-              block
-    font-normal text-base text-current
-    border-b-2 border-transparent
-    transition-all duration-300 ease-in-out
-    hover:border-[#57B3B9]
-    hover:scale-105
-  "
-            >
-              {t("navlink1")}
-            </Link>
-            <Link
-              to={"/contact-us"}
-              className="
-              block
-    font-normal text-base text-current
-    border-b-2 border-transparent
-    transition-all duration-300 ease-in-out
-    hover:border-[#57B3B9]
-    hover:scale-105
-  "
-            >
-              {t("navlink2")}
-            </Link>
+      {/* MOBILE MENU */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed top-[64px] left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
+          <div className="bg-[#000201CC] text-white rounded-3xl shadow-2xl border border-[#57B3B9]">
+            <div className="p-8 space-y-6">
+              <Link
+                to={"/how-we-work"}
+                className="
+            block
+            font-normal text-base text-current
+            border-b-2 border-transparent
+            transition-all duration-300 ease-in-out
+            hover:border-[#57B3B9]
+            hover:scale-105
+          "
+              >
+                {t("navlink1")}
+              </Link>
+              <Link
+                to={"/contact-us"}
+                className="
+            block
+            font-normal text-base text-current
+            border-b-2 border-transparent
+            transition-all duration-300 ease-in-out
+            hover:border-[#57B3B9]
+            hover:scale-105
+          "
+              >
+                {t("navlink2")}
+              </Link>
 
-            {/* <div className="pt-4 border-t border-[#57B3B9]">
-              <LanguageDropdown />
-            </div> */}
-
-            <Link
-              to={"/contact-us"}
-              className="text-center bg-[#57B3B9] hover:bg-[#54AAA9] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
-            >
-              <Rocket />
-              {t("navbtn")}
-            </Link>
+              <Link
+                to={"/contact-us"}
+                className="text-center bg-[#57B3B9] hover:bg-[#54AAA9] text-white font-semibold py-4 rounded-full shadow-lg flex items-center justify-center gap-2"
+              >
+                <Rocket />
+                {t("navbtn")}
+              </Link>
+            </div>
           </div>
         </div>
       )}
+
+      {/* SPACER TO AVOID OVERLAP */}
+      <div className="h-20 md:hidden" />
     </>
   );
 }

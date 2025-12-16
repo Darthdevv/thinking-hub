@@ -8,6 +8,7 @@ import RoleDropdown from "./RoleDropdown";
 import PhoneDropdown from "./PhoneInput";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { toast } from "react-toastify";
 
 const ContactFormSection = () => {
   const { t, i18n } = useTranslation();
@@ -17,8 +18,6 @@ const ContactFormSection = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState<"success" | "error" | "">("");
   const API_URL = import.meta.env.VITE_API;
 
 
@@ -31,9 +30,8 @@ const ContactFormSection = () => {
 const handleSubmit = async (e: { preventDefault: () => void }) => {
   e.preventDefault();
 
-  if (!fullName || !email || !role) {
-    setMessageType("error");
-    setMessage(t("requiredfields"));
+  if (!fullName || !email || !role || !phoneNumber) {
+    toast.error(t("requiredfields")); // <-- show toast instead of inline message
     return;
   }
 
@@ -44,12 +42,10 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     role,
   };
 
-  // map app language → Accept-Language
   const acceptLanguage = i18n.language === "ar" ? "ar-SA" : "en-US";
 
   try {
     setLoading(true);
-    setMessage("");
 
     const response = await fetch(`${API_URL}/contacts`, {
       method: "POST",
@@ -60,24 +56,28 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
       body: JSON.stringify(formData),
     });
 
-    if (!response.ok) {
-      throw new Error();
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      toast.error(data.message || t("submiterror")); // backend error
+      return;
     }
 
-    setMessageType("success");
-    setMessage(t("submitsuccess"));
+    toast.success(t("submitsuccess")); // success message
 
+    // reset form
     setFullName("");
     setEmail("");
     setPhoneNumber("");
     setRole(null);
-  } catch {
-    setMessageType("error");
-    setMessage(t("submiterror"));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
+    toast.error(error.message || t("submiterror")); // network error
   } finally {
     setLoading(false);
   }
 };
+
 
 
 
@@ -102,6 +102,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
             to={
               "https://www.instagram.com/design_mafs?igsh=MWh2ZGg5cWttYm83Ng=="
             }
+            target="_blank"
           >
             <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
               <Instagram />
@@ -123,21 +124,11 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
           </h2>
           <p className="text-white text-sm font-normal mb-4">{t("formdesc")}</p>
 
-          {message && (
-            <div
-              className={`mb-2 ${
-                messageType === "success" ? "text-[#01ff88]" : "text-[#FF3C00]"
-              }`}
-            >
-              {message}
-            </div>
-          )}
-
           <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
             {/* Full Name */}
             <label className="text-white text-xs font-normal">
-              {t("fullname")}
-              <span className="text-[#FF3C00]">*</span>
+              {t("fullname")}{ " "}
+              <span className="text-[#7A1F1F]">*</span>
             </label>
             <input
               type="text"
@@ -149,7 +140,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
             {/* Email */}
             <label className="text-white text-xs font-normal">
-              {t("email")} <span className="text-[#FF3C00]">*</span>
+              {t("email")} <span className="text-[#7A1F1F]">*</span>
             </label>
             <input
               type="email"
@@ -161,7 +152,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
 
             {/* Phone */}
             <label className="text-white text-xs font-normal">
-              {t("phone")}
+              {t("phone")} <span className="text-[#7A1F1F]">*</span>
             </label>
             <div className="flex gap-2">
               <PhoneDropdown
@@ -174,13 +165,18 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
                 className="p-2 rounded-md w-full focus:outline-none bg-white focus:ring-2 focus:ring-[#00eeff] text-left rtl:text-right"
                 dir="ltr"
                 value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                onChange={(e) => {
+                  // Remove non-digit characters
+                  const onlyNumbers = e.target.value.replace(/\D/g, "");
+                  // Limit to 10 digits
+                  setPhoneNumber(onlyNumbers.slice(0, 10));
+                }}
               />
             </div>
 
             {/* Role */}
             <label className="text-white text-xs font-normal">
-              {t("role")} <span className="text-[#FF3C00]">*</span>
+              {t("role")} <span className="text-[#7A1F1F]">*</span>
             </label>
             <RoleDropdown
               selected={role}
@@ -219,6 +215,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
         </button> */}
         <Link
           to={"https://www.instagram.com/design_mafs?igsh=MWh2ZGg5cWttYm83Ng=="}
+          target="_blank"
         >
           <button className="w-12.5 h-12.5 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
             <Instagram />
